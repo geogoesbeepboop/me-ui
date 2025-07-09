@@ -198,7 +198,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
                 href={item.href}
                 onClick={(e) => handleClick(e, index)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", color: '#2a00d1' }}
               >
                 {item.icon}
                 {item.label}
