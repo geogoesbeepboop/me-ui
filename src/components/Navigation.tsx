@@ -1,15 +1,16 @@
 "use client";
 import GooeyNav from "./GooeyNav";
 import { useRouter, usePathname } from "next/navigation";
-import { FaHome, FaUser, FaBriefcase, FaFolderOpen, FaUserCircle, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaUser, FaBriefcase, FaFolderOpen, FaEnvelope } from "react-icons/fa";
+import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
 
 const items = [
   { icon: <FaHome size={22} />, href: "/" },
   { icon: <FaUser size={22} />, href: "/about" },
   { icon: <FaBriefcase size={22} />, href: "/work" },
   { icon: <FaFolderOpen size={22} />, href: "/projects" },
-  { icon: <FaUserCircle size={22} />, href: "/personal" },
   { icon: <FaEnvelope size={22} />, href: "/contact" },
+  { icon: <GiPerspectiveDiceSixFacesRandom size={22} />, href: "/surprise" },
 ];
 
 export default function Navigation() {

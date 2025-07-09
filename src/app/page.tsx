@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import BlurText from "@/components/BlurText";
 import RotatingText from "@/components/RotatingText";
-import Aurora from "./backgrounds/Aurora";
+import Aurora from "../backgrounds/Aurora";
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
               animate={{ y: 0 }}
               exit={{ y: "0%" }}
               staggerDuration={0.025}
-              rotationInterval={5000}
+              rotationInterval={3000}
             />
           </div>
         </h2>
