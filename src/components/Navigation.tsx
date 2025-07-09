@@ -21,7 +21,7 @@ export default function Navigation() {
     router.push(items[index].href);
   };
   return (
-    <div style={{ height: "120px", position: "relative", marginBottom: "var(--space-xlarge)", display: "flex", justifyContent: "center" }}>
+    <div style={{ height: "50px", position: "relative", display: "flex", justifyContent: "center",}}>
       <GooeyNav
         items={items}
         particleCount={15}

@@ -205,7 +205,7 @@
   }
   
   .pc-user-info {
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 20px;
     right: 20px;
@@ -365,7 +365,7 @@
     }
   
     .pc-user-info {
-      bottom: 15px;
+      top: 15px;
       left: 15px;
       right: 15px;
       padding: 10px 12px;
@@ -414,7 +414,7 @@
     }
   
     .pc-user-info {
-      bottom: 12px;
+      top: 12px;
       left: 12px;
       right: 12px;
       padding: 8px 10px;

@@ -127,7 +127,8 @@ const BlurText: React.FC<BlurTextProps> = ({
             }
             style={{
               display: 'flex',
-              willChange: 'transform, filter, opacity'
+              willChange: 'transform, filter, opacity',
+              flexDirection: 'row'
             }}
           >
             {segment === ' ' ? '\u00A0' : segment}

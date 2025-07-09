@@ -33,7 +33,6 @@ export default function RootLayout({
             padding: "var(--space-xlarge) var(--gutter)",
           }}
         >
-          {/* Navigation will go here */}
           <Navigation />
           {children}
         </div>

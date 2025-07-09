@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section id="hero" className={styles.hero} style={{ marginTop: '-10%' }}>
+      <section id="hero" className={styles.hero}>
         <BlurText
           text="George Andrade-Munoz"
           delay={350}
