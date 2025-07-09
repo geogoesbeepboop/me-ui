@@ -218,6 +218,15 @@ a.secondary {
   background: var(--color-accent-secondary);
 }
 
+.profileImage {
+  margin-top: var(--space-large);
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  --shadow-color: #2a00d1;
+  filter: drop-shadow(0 0 1.5rem var(--shadow-color));
+  bottom: 0;
+}
 
 @media (max-width: 600px) {
   .page {
