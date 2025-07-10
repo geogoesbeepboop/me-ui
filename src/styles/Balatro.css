@@ -1,0 +1,4 @@
+.balatro-container {
+  width: var(--container-max-width);
+  height: 100vh;
+}

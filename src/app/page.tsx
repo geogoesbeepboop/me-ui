@@ -12,7 +12,7 @@ export default function Home() {
       <section id="hero" className={styles.hero}>
         <BlurText
           text="George Andrade-Munoz"
-          delay={350}
+          delay={100}
           animateBy="words"
           direction="top"
           className={styles.h1}
