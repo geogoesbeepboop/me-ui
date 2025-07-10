@@ -1,5 +1,5 @@
 .projectsSection {
-  max-width: var(--container-max-width);
+  max-width: var(--container-maxWidth);
   margin: 0 auto;
   padding: 0 4rem;
 }

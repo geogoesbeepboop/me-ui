@@ -26,7 +26,7 @@ export default function RootLayout({
       <body>
         <div
           style={{
-            maxWidth: "var(--container-max-width)",
+            maxWidth: "var(--container-maxWidth)",
             margin: "0 auto",
             minHeight: "100vh",
             background: "var(--color-bg-primary)",

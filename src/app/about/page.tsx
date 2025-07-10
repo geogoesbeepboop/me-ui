@@ -100,9 +100,9 @@ export default function About() {
 
   return (
     <main className={styles.storybookMain}>
-      <div className={styles.auroraContainer}>
+      {/* <div className={styles.auroraContainer}>
         <Aurora />
-      </div>
+      </div> */}
       
       {/* Section Navigation Dots */}
       <div className={styles.sectionDots}>
