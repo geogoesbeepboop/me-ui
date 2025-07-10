@@ -9,7 +9,7 @@ const sections = [
   {
     key: 'about',
     title: 'A little bit about me',
-    text: `I’m George Andrade-Munoz, a designer and developer based in Minimal City. I specialize in building beautiful, accessible, and performant web apps. My work is guided by a love for whitespace, elegant typography, and subtle interactions.`,
+    text: `I'm George Andrade-Munoz, a designer and developer based in Minimal City. I specialize in building beautiful, accessible, and performant web apps. My work is guided by a love for whitespace, elegant typography, and subtle interactions.`,
     image: '/me.png',
     imageAlt: 'Profile placeholder',
   },
@@ -22,8 +22,8 @@ const sections = [
   },
   {
     key: 'learning',
-    title: 'Things I’m learning about right now',
-    text: `AI, generative art, and the intersection of design and engineering. I’m always exploring new tools and frameworks to expand my toolkit.`,
+    title: 'Things I\'m learning about right now',
+    text: `AI, generative art, and the intersection of design and engineering. I'm always exploring new tools and frameworks to expand my toolkit.`,
     image: '/window.svg',
     imageAlt: 'Learning placeholder',
   },
@@ -37,7 +37,7 @@ const sections = [
   {
     key: 'cta',
     title: 'Call to Action',
-    text: `Let’s connect! Whether you want to collaborate, chat about tech, or share a coffee recommendation, my inbox is open.`,
+    text: `Let's connect! Whether you want to collaborate, chat about tech, or share a coffee recommendation, my inbox is open.`,
     image: '/github.png',
     imageAlt: 'Call to action placeholder',
   },
@@ -46,7 +46,9 @@ const sections = [
 export default function About() {
   return (
     <main className={styles.storybookMain}>
-      <Aurora />
+      <div className={styles.auroraContainer}>
+        <Aurora />
+      </div>
       <div className={styles.storybookContent}>
         {sections.map((section, idx) => (
           <motion.section
@@ -61,8 +63,8 @@ export default function About() {
               <Image
                 src={section.image}
                 alt={section.imageAlt}
-                width={160}
-                height={160}
+                width={320}
+                height={320}
                 className={styles.sectionImage}
                 priority={idx === 0}
               />

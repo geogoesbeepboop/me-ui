@@ -4,45 +4,45 @@
   width: 100%;
   overflow-x: hidden;
   background: transparent;
+}
+
+.auroraContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+  pointer-events: none;
 }
 
 .storybookContent {
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem 6rem 1.5rem;
   z-index: 1;
+  width: 100%;
 }
 
 .storySection {
-  background: var(--color-bg-secondary, #1a1a1a);
-  border-radius: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-  padding: 3rem 2rem 2.5rem 2rem;
-  margin-bottom: 3rem;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
   position: relative;
-  overflow: hidden;
-  transition: box-shadow 0.2s;
-}
-
-.storySection:hover {
-  box-shadow: 0 6px 24px rgba(42,0,209,0.18);
+  background: transparent;
 }
 
 .sectionImageWrap {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 160px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   background: linear-gradient(135deg, #2a00d1 0%, #7cff67 100%);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   overflow: hidden;
 }
 
@@ -55,37 +55,68 @@
 }
 
 .sectionHeader {
-  font-family: var(--font-habibi-regular, serif);
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: var(--font-habibi-regular, 'Habibi', serif);
+  font-size: 3.5rem;
+  font-weight: 400;
   color: #fff;
-  margin-bottom: 1.25rem;
+  margin-bottom: 3rem;
   text-align: center;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .sectionText {
+  font-family: var(--font-habibi-regular, 'Habibi', serif);
   color: var(--color-text-secondary, #a0a0a0);
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.5rem;
+  line-height: 1.8;
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  font-weight: 400;
 }
 
-@media (max-width: 600px) {
-  .storybookContent {
-    padding: 2rem 0.5rem 3rem 0.5rem;
-  }
+@media (max-width: 768px) {
   .storySection {
-    padding: 2rem 1rem 1.5rem 1rem;
+    padding: 4rem 1rem;
+    min-height: 100vh;
   }
+  
   .sectionHeader {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
+  
+  .sectionText {
+    font-size: 1.25rem;
+    max-width: 600px;
+  }
+  
   .sectionImageWrap {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1.25rem;
+    width: 240px;
+    height: 240px;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .storySection {
+    padding: 3rem 0.5rem;
+  }
+  
+  .sectionHeader {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionText {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+  
+  .sectionImageWrap {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
   }
 } 
