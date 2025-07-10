@@ -215,6 +215,6 @@
   }
   .gooey-nav-container {
     min-width: 0;
-    width: 100vw;
+    padding: 0 0.5em;
   }
 }
