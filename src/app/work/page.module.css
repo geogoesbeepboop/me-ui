@@ -1,0 +1,406 @@
+.workPage {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    font-family: "Habibi", serif;
+}
+
+.sectionHeader {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.titleIcon {
+    color: #2a00d1;
+}
+
+.sectionSubtitle {
+    font-size: 1.125rem;
+    color: #a0a0a0;
+    margin: 0;
+}
+
+.tabNavigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tabButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    color: #a0a0a0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tabButton:hover {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.tabButton.active {
+    background-color: #2a00d1;
+    color: #ffffff;
+    border-color: #4a20f1;
+}
+
+.contentSection {
+    min-height: 400px;
+}
+
+/* Experience Section */
+.experienceSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experienceCard {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    border: 1px solid #333333;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.experienceCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.jobTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+
+.jobMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #a0a0a0;
+    flex-wrap: wrap;
+}
+
+.metaIcon {
+    font-size: 0.75rem;
+}
+
+.separator {
+    color: #666666;
+}
+
+.externalLink {
+    color: #2a00d1;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.externalLink:hover {
+    color: #4a20f1;
+}
+
+.jobDescription {
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.technologies,
+.achievements {
+    margin-top: 1rem;
+}
+
+.technologies h4,
+.achievements h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.techTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.techTag {
+    background-color: #333333;
+    color: #a0a0a0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.achievementList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievementItem {
+    color: #a0a0a0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.achievementItem::before {
+    content: "•";
+    color: #2a00d1;
+    position: absolute;
+    left: 0;
+}
+
+/* Skills Section */
+.skillsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skillCategory {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    border: 1px solid #333333;
+    padding: 1.5rem;
+}
+
+.categoryTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.skillCard {
+    background-color: #111111;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #2a2a2a;
+}
+
+.skillHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.skillName {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.skillLevel {
+    font-size: 0.75rem;
+    color: #666666;
+}
+
+.skillBar {
+    height: 6px;
+    background-color: #333333;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skillProgress {
+    height: 100%;
+    background-color: #2a00d1;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Education Section */
+.educationSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.educationCard {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    border: 1px solid #333333;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.educationCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.educationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.degreeTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.gpa {
+    font-size: 0.875rem;
+    color: #2a00d1;
+    font-weight: 500;
+}
+
+.educationMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #a0a0a0;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.educationDescription {
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Achievements Section */
+.achievementsSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievementCard {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    border: 1px solid #333333;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.achievementCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.achievementHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.achievementTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.achievementYear {
+    font-size: 0.875rem;
+    color: #2a00d1;
+    font-weight: 500;
+}
+
+.achievementDescription {
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.achievementLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2a00d1;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.achievementLink:hover {
+    color: #4a20f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .workPage {
+        padding: 1rem;
+    }
+
+    .tabNavigation {
+        gap: 0.5rem;
+    }
+
+    .tabButton {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievementsSection {
+        grid-template-columns: 1fr;
+    }
+
+    .jobMeta,
+    .educationMeta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .separator {
+        display: none;
+    }
+}

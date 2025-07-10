@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "../app/page.module.css";
 import BlurText from "@/components/BlurText";
 import RotatingText from "@/components/RotatingText";
 import ProfileCard from "@/components/ProfileCard";

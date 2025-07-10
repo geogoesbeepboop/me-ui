@@ -1,44 +1,8 @@
 "use client";
 import { useState } from 'react';
-import { FaBriefcase, FaGraduationCap, FaTrophy, FaCode, FaTools, FaRocket, FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt } from 'react-icons/fa';
-
-interface WorkExperience {
-  id: string;
-  title: string;
-  company: string;
-  location: string;
-  period: string;
-  description: string;
-  technologies: string[];
-  achievements: string[];
-  link?: string;
-}
-
-interface Skill {
-  id: string;
-  name: string;
-  category: string;
-  level: number;
-  icon?: string;
-}
-
-interface Education {
-  id: string;
-  degree: string;
-  institution: string;
-  location: string;
-  period: string;
-  description: string;
-  gpa?: string;
-}
-
-interface Achievement {
-  id: string;
-  title: string;
-  description: string;
-  year: string;
-  link?: string;
-}
+import { FaBriefcase, FaGraduationCap, FaTrophy, FaCode, FaRocket, FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt } from 'react-icons/fa';
+import styles from "./page.module.css";
+import { WorkExperience, Skill, Education, Achievement } from '@/types';
 
 const workExperience: WorkExperience[] = [
   {
@@ -51,7 +15,7 @@ const workExperience: WorkExperience[] = [
     technologies: ["Java", "Spring", "TypeScript", "React", "MySQL", "Vite"],
     achievements: [
       "Collaborated with senior leadership to determine functional requirements for various products, ensuring the team is set up to achieve organizational goals.",
-      "Researched and integrated emerging AI technologies, including GitHub Copilot and Apple Foundation Models, shaping the team’s adoption strategy.",
+      "Researched and integrated emerging AI technologies, including GitHub Copilot and Apple Foundation Models, shaping the team's adoption strategy.",
       "Mentored junior engineers, accelerating onboarding and fostering a collaborative, high-performance team culture."
     ]
   },
@@ -61,7 +25,7 @@ const workExperience: WorkExperience[] = [
     company: "Bank of America",
     location: "Charlotte, NC",
     period: "2023 - 2024",
-    description: "Led System Architecture, UI/UX design and techinical implementation for the team’s flagship application.",
+    description: "Led System Architecture, UI/UX design and techinical implementation for the team's flagship application.",
     technologies: ["Java", "Spring", "JavaScript", "HTML/CSS", "MySQL"],
     achievements: [
       "Developed and optimized backend infrastructure using Spring and MySQL, optimizing for performance and scalability of key features.",
@@ -171,24 +135,23 @@ export default function WorkPage() {
   ];
 
   return (
-    <div className="work-page">
+    <div className={styles.workPage}>
       {/* Header Section */}
-      <section className="section-header">
-        <h1 className="section-title">
-          <FaRocket className="title-icon" />
+      <section className={styles.sectionHeader}>
+        <h1 className={styles.sectionTitle}>
           Professional Experience
         </h1>
-        <p className="section-subtitle">
+        <p className={styles.sectionSubtitle}>
           A comprehensive overview of my professional journey, skills, and achievements
         </p>
       </section>
 
       {/* Tab Navigation */}
-      <div className="tab-navigation">
+      <div className={styles.tabNavigation}>
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
+            className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ''}`}
             onClick={() => setActiveTab(tab.id)}
           >
             {tab.icon}
@@ -198,51 +161,51 @@ export default function WorkPage() {
       </div>
 
       {/* Content Sections */}
-      <div className="content-section">
+      <div className={styles.contentSection}>
         {activeTab === 'experience' && (
-          <div className="experience-section">
+          <div className={styles.experienceSection}>
             {workExperience.map((job) => (
-              <div key={job.id} className="experience-card">
-                <div className="card-header">
-                  <div className="job-info">
-                    <h3 className="job-title">{job.title}</h3>
-                    <div className="job-meta">
-                      <span className="company">{job.company}</span>
-                      <span className="separator">•</span>
-                      <span className="location">
-                        <FaMapMarkerAlt className="meta-icon" />
+              <div key={job.id} className={styles.experienceCard}>
+                <div className={styles.cardHeader}>
+                  <div className={styles.jobInfo}>
+                    <h3 className={styles.jobTitle}>{job.title}</h3>
+                    <div className={styles.jobMeta}>
+                      <span className={styles.company}>{job.company}</span>
+                      <span className={styles.separator}>•</span>
+                      <span className={styles.location}>
+                        <FaMapMarkerAlt className={styles.metaIcon} />
                         {job.location}
                       </span>
-                      <span className="separator">•</span>
-                      <span className="period">
-                        <FaCalendarAlt className="meta-icon" />
+                      <span className={styles.separator}>•</span>
+                      <span className={styles.period}>
+                        <FaCalendarAlt className={styles.metaIcon} />
                         {job.period}
                       </span>
                     </div>
                   </div>
                   {job.link && (
-                    <a href={job.link} className="external-link" target="_blank" rel="noopener noreferrer">
+                    <a href={job.link} className={styles.externalLink} target="_blank" rel="noopener noreferrer">
                       <FaExternalLinkAlt />
                     </a>
                   )}
                 </div>
                 
-                <p className="job-description">{job.description}</p>
+                <p className={styles.jobDescription}>{job.description}</p>
                 
-                <div className="technologies">
+                <div className={styles.technologies}>
                   <h4>Technologies</h4>
-                  <div className="tech-tags">
+                  <div className={styles.techTags}>
                     {job.technologies.map((tech) => (
-                      <span key={tech} className="tech-tag">{tech}</span>
+                      <span key={tech} className={styles.techTag}>{tech}</span>
                     ))}
                   </div>
                 </div>
                 
-                <div className="achievements">
+                <div className={styles.achievements}>
                   <h4>Key Achievements</h4>
-                  <ul className="achievement-list">
+                  <ul className={styles.achievementList}>
                     {job.achievements.map((achievement, index) => (
-                      <li key={index} className="achievement-item">{achievement}</li>
+                      <li key={index} className={styles.achievementItem}>{achievement}</li>
                     ))}
                   </ul>
                 </div>
@@ -252,22 +215,22 @@ export default function WorkPage() {
         )}
 
         {activeTab === 'skills' && (
-          <div className="skills-section">
+          <div className={styles.skillsSection}>
             {skillCategories.map((category) => (
-              <div key={category} className="skill-category">
-                <h3 className="category-title">{category}</h3>
-                <div className="skills-grid">
+              <div key={category} className={styles.skillCategory}>
+                <h3 className={styles.categoryTitle}>{category}</h3>
+                <div className={styles.skillsGrid}>
                   {skills
                     .filter(skill => skill.category === category)
                     .map((skill) => (
-                      <div key={skill.id} className="skill-card">
-                        <div className="skill-header">
-                          <span className="skill-name">{skill.name}</span>
-                          <span className="skill-level">{skill.level}%</span>
+                      <div key={skill.id} className={styles.skillCard}>
+                        <div className={styles.skillHeader}>
+                          <span className={styles.skillName}>{skill.name}</span>
+                          <span className={styles.skillLevel}>{skill.level}%</span>
                         </div>
-                        <div className="skill-bar">
+                        <div className={styles.skillBar}>
                           <div 
-                            className="skill-progress" 
+                            className={styles.skillProgress} 
                             style={{ width: `${skill.level}%` }}
                           ></div>
                         </div>
@@ -280,45 +243,45 @@ export default function WorkPage() {
         )}
 
         {activeTab === 'education' && (
-          <div className="education-section">
+          <div className={styles.educationSection}>
             {education.map((edu) => (
-              <div key={edu.id} className="education-card">
-                <div className="education-header">
-                  <h3 className="degree-title">{edu.degree}</h3>
+              <div key={edu.id} className={styles.educationCard}>
+                <div className={styles.educationHeader}>
+                  <h3 className={styles.degreeTitle}>{edu.degree}</h3>
                   {edu.gpa && (
-                    <span className="gpa">GPA: {edu.gpa}</span>
+                    <span className={styles.gpa}>GPA: {edu.gpa}</span>
                   )}
                 </div>
-                <div className="education-meta">
-                  <span className="institution">{edu.institution}</span>
-                  <span className="separator">•</span>
-                  <span className="location">
-                    <FaMapMarkerAlt className="meta-icon" />
+                <div className={styles.educationMeta}>
+                  <span className={styles.institution}>{edu.institution}</span>
+                  <span className={styles.separator}>•</span>
+                  <span className={styles.location}>
+                    <FaMapMarkerAlt className={styles.metaIcon} />
                     {edu.location}
                   </span>
-                  <span className="separator">•</span>
-                  <span className="period">
-                    <FaCalendarAlt className="meta-icon" />
+                  <span className={styles.separator}>•</span>
+                  <span className={styles.period}>
+                    <FaCalendarAlt className={styles.metaIcon} />
                     {edu.period}
                   </span>
                 </div>
-                <p className="education-description">{edu.description}</p>
+                <p className={styles.educationDescription}>{edu.description}</p>
               </div>
             ))}
           </div>
         )}
 
         {activeTab === 'achievements' && (
-          <div className="achievements-section">
+          <div className={styles.achievementsSection}>
             {achievements.map((achievement) => (
-              <div key={achievement.id} className="achievement-card">
-                <div className="achievement-header">
-                  <h3 className="achievement-title">{achievement.title}</h3>
-                  <span className="achievement-year">{achievement.year}</span>
+              <div key={achievement.id} className={styles.achievementCard}>
+                <div className={styles.achievementHeader}>
+                  <h3 className={styles.achievementTitle}>{achievement.title}</h3>
+                  <span className={styles.achievementYear}>{achievement.year}</span>
                 </div>
-                <p className="achievement-description">{achievement.description}</p>
+                <p className={styles.achievementDescription}>{achievement.description}</p>
                 {achievement.link && (
-                  <a href={achievement.link} className="achievement-link" target="_blank" rel="noopener noreferrer">
+                  <a href={achievement.link} className={styles.achievementLink} target="_blank" rel="noopener noreferrer">
                     <FaExternalLinkAlt />
                     View Details
                   </a>
@@ -328,411 +291,6 @@ export default function WorkPage() {
           </div>
         )}
       </div>
-
-      <style jsx>{`
-        .work-page {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 2rem 1.5rem;
-        }
-
-        .section-header {
-          margin-bottom: 3rem;
-          text-align: center;
-        }
-
-        .section-title {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 0.5rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.75rem;
-        }
-
-        .title-icon {
-          color: #2a00d1;
-        }
-
-        .section-subtitle {
-          font-size: 1.125rem;
-          color: #a0a0a0;
-          margin: 0;
-        }
-
-        .tab-navigation {
-          display: flex;
-          justify-content: center;
-          gap: 1rem;
-          margin-bottom: 2rem;
-          flex-wrap: wrap;
-        }
-
-        .tab-button {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.75rem 1.5rem;
-          background-color: #1a1a1a;
-          border: 1px solid #333333;
-          border-radius: 12px;
-          color: #a0a0a0;
-          font-size: 0.875rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.2s ease;
-        }
-
-        .tab-button:hover {
-          background-color: #2a2a2a;
-          color: #ffffff;
-          transform: translateY(-1px);
-        }
-
-        .tab-button.active {
-          background-color: #2a00d1;
-          color: #ffffff;
-          border-color: #4a20f1;
-        }
-
-        .content-section {
-          min-height: 400px;
-        }
-
-        /* Experience Section */
-        .experience-section {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-
-        .experience-card {
-          background-color: #1a1a1a;
-          border-radius: 12px;
-          border: 1px solid #333333;
-          padding: 1.5rem;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-          transition: all 0.2s ease;
-        }
-
-        .experience-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        .card-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 1rem;
-        }
-
-        .job-title {
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: #ffffff;
-          margin: 0 0 0.5rem 0;
-        }
-
-        .job-meta {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 0.875rem;
-          color: #a0a0a0;
-          flex-wrap: wrap;
-        }
-
-        .meta-icon {
-          font-size: 0.75rem;
-        }
-
-        .separator {
-          color: #666666;
-        }
-
-        .external-link {
-          color: #2a00d1;
-          font-size: 1rem;
-          transition: color 0.2s ease;
-        }
-
-        .external-link:hover {
-          color: #4a20f1;
-        }
-
-        .job-description {
-          color: #a0a0a0;
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
-        }
-
-        .technologies, .achievements {
-          margin-top: 1rem;
-        }
-
-        .technologies h4, .achievements h4 {
-          font-size: 0.875rem;
-          font-weight: 600;
-          color: #ffffff;
-          margin-bottom: 0.75rem;
-        }
-
-        .tech-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-        }
-
-        .tech-tag {
-          background-color: #333333;
-          color: #a0a0a0;
-          padding: 0.25rem 0.75rem;
-          border-radius: 6px;
-          font-size: 0.75rem;
-          font-weight: 500;
-        }
-
-        .achievement-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .achievement-item {
-          color: #a0a0a0;
-          font-size: 0.875rem;
-          line-height: 1.5;
-          margin-bottom: 0.5rem;
-          padding-left: 1rem;
-          position: relative;
-        }
-
-        .achievement-item::before {
-          content: "•";
-          color: #2a00d1;
-          position: absolute;
-          left: 0;
-        }
-
-        /* Skills Section */
-        .skills-section {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-        }
-
-        .skill-category {
-          background-color: #1a1a1a;
-          border-radius: 12px;
-          border: 1px solid #333333;
-          padding: 1.5rem;
-        }
-
-        .category-title {
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: #ffffff;
-          margin-bottom: 1rem;
-        }
-
-        .skills-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 1rem;
-        }
-
-        .skill-card {
-          background-color: #111111;
-          border-radius: 8px;
-          padding: 1rem;
-          border: 1px solid #2a2a2a;
-        }
-
-        .skill-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 0.5rem;
-        }
-
-        .skill-name {
-          font-size: 0.875rem;
-          font-weight: 500;
-          color: #ffffff;
-        }
-
-        .skill-level {
-          font-size: 0.75rem;
-          color: #666666;
-        }
-
-        .skill-bar {
-          height: 6px;
-          background-color: #333333;
-          border-radius: 3px;
-          overflow: hidden;
-        }
-
-        .skill-progress {
-          height: 100%;
-          background-color: #2a00d1;
-          border-radius: 3px;
-          transition: width 0.3s ease;
-        }
-
-        /* Education Section */
-        .education-section {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-
-        .education-card {
-          background-color: #1a1a1a;
-          border-radius: 12px;
-          border: 1px solid #333333;
-          padding: 1.5rem;
-          transition: all 0.2s ease;
-        }
-
-        .education-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        .education-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 0.75rem;
-        }
-
-        .degree-title {
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: #ffffff;
-          margin: 0;
-        }
-
-        .gpa {
-          font-size: 0.875rem;
-          color: #2a00d1;
-          font-weight: 500;
-        }
-
-        .education-meta {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 0.875rem;
-          color: #a0a0a0;
-          margin-bottom: 1rem;
-          flex-wrap: wrap;
-        }
-
-        .education-description {
-          color: #a0a0a0;
-          line-height: 1.6;
-          margin: 0;
-        }
-
-        /* Achievements Section */
-        .achievements-section {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 1.5rem;
-        }
-
-        .achievement-card {
-          background-color: #1a1a1a;
-          border-radius: 12px;
-          border: 1px solid #333333;
-          padding: 1.5rem;
-          transition: all 0.2s ease;
-        }
-
-        .achievement-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        .achievement-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 1rem;
-        }
-
-        .achievement-title {
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: #ffffff;
-          margin: 0;
-        }
-
-        .achievement-year {
-          font-size: 0.875rem;
-          color: #2a00d1;
-          font-weight: 500;
-        }
-
-        .achievement-description {
-          color: #a0a0a0;
-          line-height: 1.6;
-          margin-bottom: 1rem;
-        }
-
-        .achievement-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: #2a00d1;
-          font-size: 0.875rem;
-          text-decoration: none;
-          transition: color 0.2s ease;
-        }
-
-        .achievement-link:hover {
-          color: #4a20f1;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-          .work-page {
-            padding: 1rem;
-          }
-
-          .tab-navigation {
-            gap: 0.5rem;
-          }
-
-          .tab-button {
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-          }
-
-          .skills-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .achievements-section {
-            grid-template-columns: 1fr;
-          }
-
-          .job-meta, .education-meta {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.25rem;
-          }
-
-          .separator {
-            display: none;
-          }
-        }
-      `}</style>
     </div>
   );
 }
