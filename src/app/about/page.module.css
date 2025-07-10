@@ -2,6 +2,7 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
+  margin-top: -5%;
   overflow-x: hidden;
   background: transparent;
 }
@@ -11,7 +12,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 20%;
   z-index: 0;
   pointer-events: none;
 }
@@ -25,98 +26,201 @@
 .storySection {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   position: relative;
   background: transparent;
+  gap: 4rem;
 }
 
 .sectionImageWrap {
-  margin-bottom: 4rem;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
+  width: 500px;
+  height: 400px;
+  border-radius: 1rem;
   background: linear-gradient(135deg, #2a00d1 0%, #7cff67 100%);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   overflow: hidden;
+  position: relative;
 }
 
 .sectionImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 1rem;
   filter: grayscale(0.1) contrast(1.1);
+  transition: transform 0.3s ease;
+}
+
+.sectionImage:hover {
+  transform: scale(1.05);
+}
+
+.sectionContent {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sectionHeader {
   font-family: var(--font-habibi-regular, 'Habibi', serif);
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: 400;
   color: #fff;
-  margin-bottom: 3rem;
-  text-align: center;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .sectionText {
   font-family: var(--font-habibi-regular, 'Habibi', serif);
   color: var(--color-text-secondary, #a0a0a0);
-  font-size: 1.5rem;
-  line-height: 1.8;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+  font-size: 1.75rem;
+  line-height: 1.7;
   font-weight: 400;
+}
+
+/* Layout variations */
+.layoutLeft {
+  flex-direction: row;
+}
+
+.layoutRight {
+  flex-direction: row-reverse;
+}
+
+.layoutCenter {
+  flex-direction: column;
+  text-align: center;
+  gap: 3rem;
+}
+
+.layoutCenter .sectionImageWrap {
+  width: 600px;
+  height: 450px;
+}
+
+.layoutCenter .sectionContent {
+  max-width: 800px;
+}
+
+.layoutCenter .sectionHeader {
+  font-size: 5rem;
+  margin-bottom: 2.5rem;
+}
+
+.layoutCenter .sectionText {
+  font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .storySection {
+    flex-direction: column !important;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
+  }
+  
+  .sectionImageWrap {
+    width: 400px;
+    height: 320px;
+  }
+  
+  .sectionHeader {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  
+  .sectionText {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .layoutCenter .sectionImageWrap {
+    width: 450px;
+    height: 350px;
+  }
+  
+  .layoutCenter .sectionHeader {
+    font-size: 4rem;
+  }
+  
+  .layoutCenter .sectionText {
+    font-size: 1.75rem;
+  }
 }
 
 @media (max-width: 768px) {
   .storySection {
-    padding: 4rem 1rem;
-    min-height: 100vh;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  
+  .sectionImageWrap {
+    width: 300px;
+    height: 240px;
   }
   
   .sectionHeader {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .sectionText {
     font-size: 1.25rem;
-    max-width: 600px;
   }
   
-  .sectionImageWrap {
-    width: 240px;
-    height: 240px;
-    margin-bottom: 3rem;
+  .layoutCenter .sectionImageWrap {
+    width: 320px;
+    height: 260px;
+  }
+  
+  .layoutCenter .sectionHeader {
+    font-size: 3rem;
+  }
+  
+  .layoutCenter .sectionText {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .storySection {
-    padding: 3rem 0.5rem;
+    padding: 1.5rem 0.5rem;
+    gap: 1.5rem;
+  }
+  
+  .sectionImageWrap {
+    width: 250px;
+    height: 200px;
   }
   
   .sectionHeader {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   .sectionText {
     font-size: 1.1rem;
-    max-width: 500px;
   }
   
-  .sectionImageWrap {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 2rem;
+  .layoutCenter .sectionImageWrap {
+    width: 280px;
+    height: 220px;
+  }
+  
+  .layoutCenter .sectionHeader {
+    font-size: 2.5rem;
+  }
+  
+  .layoutCenter .sectionText {
+    font-size: 1.25rem;
   }
 } 

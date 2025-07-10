@@ -12,6 +12,7 @@ const sections = [
     text: `I'm George Andrade-Munoz, a designer and developer based in Minimal City. I specialize in building beautiful, accessible, and performant web apps. My work is guided by a love for whitespace, elegant typography, and subtle interactions.`,
     image: '/me.png',
     imageAlt: 'Profile placeholder',
+    layout: 'left'
   },
   {
     key: 'drives',
@@ -19,6 +20,7 @@ const sections = [
     text: `Curiosity, creativity, and a desire to make technology more human. I thrive on solving complex problems and building things that matter.`,
     image: '/globe.svg',
     imageAlt: 'Drives placeholder',
+    layout: 'right' 
   },
   {
     key: 'learning',
@@ -26,6 +28,7 @@ const sections = [
     text: `AI, generative art, and the intersection of design and engineering. I'm always exploring new tools and frameworks to expand my toolkit.`,
     image: '/window.svg',
     imageAlt: 'Learning placeholder',
+    layout: 'left' 
   },
   {
     key: 'afk',
@@ -33,6 +36,7 @@ const sections = [
     text: `Jazz piano, hiking, and discovering new coffee shops. I believe inspiration often strikes away from the screen.`,
     image: '/file.svg',
     imageAlt: 'AFK placeholder',
+    layout: 'right' 
   },
   {
     key: 'cta',
@@ -40,6 +44,7 @@ const sections = [
     text: `Let's connect! Whether you want to collaborate, chat about tech, or share a coffee recommendation, my inbox is open.`,
     image: '/github.png',
     imageAlt: 'Call to action placeholder',
+    layout: 'center'
   },
 ];
 
@@ -53,7 +58,7 @@ export default function About() {
         {sections.map((section, idx) => (
           <motion.section
             key={section.key}
-            className={styles.storySection}
+            className={`${styles.storySection} ${styles[`layout${section.layout.charAt(0).toUpperCase() + section.layout.slice(1)}`]}`}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -63,14 +68,16 @@ export default function About() {
               <Image
                 src={section.image}
                 alt={section.imageAlt}
-                width={320}
-                height={320}
+                width={500}
+                height={400}
                 className={styles.sectionImage}
                 priority={idx === 0}
               />
             </div>
-            <BlurText text={section.title} animateBy="words" className={styles.sectionHeader} />
-            <p className={styles.sectionText}>{section.text}</p>
+            <div className={styles.sectionContent}>
+              <BlurText text={section.title} animateBy="words" className={styles.sectionHeader} />
+              <p className={styles.sectionText}>{section.text}</p>
+            </div>
           </motion.section>
         ))}
       </div>
