@@ -1,6 +1,5 @@
 .text-rotate {
     display: flex;
-    /* flex-wrap: wrap; */
     white-space: pre-wrap;
     position: relative;
   }
@@ -36,9 +35,9 @@
   }
 
   .rotating-text-wrapper {
-    background-color: #2a00d1; /* Light gray background */
-    color: #fff; /* Black text */
+    background-color: #2a00d1; 
+    color: #fff; 
     padding: 0.1rem 0.6rem;
     border-radius: 0.25rem;
-    font-family: var(--font-sans);
+    font-family: var(--font-habibi-regular);
   }

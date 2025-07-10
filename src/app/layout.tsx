@@ -19,7 +19,7 @@ export default function RootLayout({
         {/* Elegant serif and clean sans-serif fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Habibi&family=Shippori+Antique&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?&family=Lovers+Quarrel&family=Electrolize&family=Habibi&family=Shippori+Antique&display=swap" rel="stylesheet"></link>
       </head>
       <body>
         <div
@@ -29,7 +29,7 @@ export default function RootLayout({
             minHeight: "100vh",
             background: "var(--color-bg-primary)",
             color: "var(--color-text-primary)",
-            fontFamily: "var(--font-sans)",
+            fontFamily: "var(--font-habibi-regular)",
             padding: "var(--space-xlarge) var(--gutter)",
           }}
         >

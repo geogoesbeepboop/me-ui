@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import BlurText from "@/components/BlurText";
 import RotatingText from "@/components/RotatingText";
-import Aurora from "../backgrounds/Aurora";
 import ProfileCard from "@/components/ProfileCard";
 
 export default function Home() {
@@ -34,23 +33,10 @@ export default function Home() {
         </h2>
         <ProfileCard
           avatarUrl="/me.png"
-          iconUrl="/github.png"
+          iconUrl="/background3.jpg"
           showUserInfo={true}
           enableTilt={true}
           onContactClick={() => console.log('Contact clicked')}
-        />
-        {/* <Image
-          src="/me.png"
-          alt="A picture of George Andrade-Munoz"
-          width={600}
-          height={600}
-          className={styles.profileImage}
-        /> */}
-        <Aurora
-          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
         />
       </section>
     </main>

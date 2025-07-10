@@ -1,0 +1,238 @@
+{
+    "designSystem": {
+      "name": "Modern Card-Based Interface",
+      "mode": "dark",
+      "principles": [
+        "Clean typography with strong hierarchy",
+        "Consistent spacing and alignment",
+        "Card-based layout with subtle shadows",
+        "Selective use of accent colors for emphasis",
+        "Grid-based organization with proper gutters"
+      ]
+    },
+    "colors": {
+      "primary": {
+        "brand": "#2a00d1",
+        "brandLight": "#4a20f1",
+        "brandDark": "#1a0091"
+      },
+      "neutral": {
+        "background": "#000000",
+        "surface": "#111111",
+        "surfaceElevated": "#1a1a1a",
+        "text": "#ffffff",
+        "textSecondary": "#a0a0a0",
+        "textTertiary": "#666666",
+        "border": "#333333",
+        "divider": "#2a2a2a"
+      },
+      "semantic": {
+        "highlight": "#2a00d1",
+        "muted": "#666666"
+      }
+    },
+    "typography": {
+      "scale": "1.25",
+      "families": {
+        "primary": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      },
+      "sizes": {
+        "xl": "2rem",
+        "lg": "1.5rem",
+        "md": "1.125rem",
+        "base": "1rem",
+        "sm": "0.875rem"
+      },
+      "weights": {
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      },
+      "lineHeights": {
+        "tight": 1.2,
+        "normal": 1.4,
+        "relaxed": 1.6
+      }
+    },
+    "spacing": {
+      "unit": "0.25rem",
+      "scale": {
+        "xs": "0.5rem",
+        "sm": "0.75rem",
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2rem",
+        "2xl": "3rem",
+        "3xl": "4rem"
+      }
+    },
+    "layout": {
+      "containers": {
+        "maxWidth": "1200px",
+        "padding": "1.5rem",
+        "margin": "0 auto"
+      },
+      "grid": {
+        "columns": 12,
+        "gap": "1.5rem",
+        "breakpoints": {
+          "sm": "640px",
+          "md": "768px",
+          "lg": "1024px",
+          "xl": "1280px"
+        }
+      }
+    },
+    "components": {
+      "sectionHeader": {
+        "typography": {
+          "fontSize": "2rem",
+          "fontWeight": 700,
+          "lineHeight": 1.2,
+          "color": "#ffffff"
+        },
+        "spacing": {
+          "marginBottom": "2rem"
+        }
+      },
+      "card": {
+        "base": {
+          "backgroundColor": "#1a1a1a",
+          "borderRadius": "12px",
+          "border": "1px solid #333333",
+          "padding": "1.5rem",
+          "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.3)"
+        },
+        "hover": {
+          "transform": "translateY(-2px)",
+          "boxShadow": "0 4px 12px rgba(0, 0, 0, 0.4)",
+          "transition": "all 0.2s ease"
+        },
+        "highlighted": {
+          "backgroundColor": "#2a00d1",
+          "color": "#ffffff"
+        }
+      },
+      "listItem": {
+        "base": {
+          "display": "flex",
+          "justifyContent": "space-between",
+          "alignItems": "center",
+          "padding": "1.25rem 1.5rem",
+          "borderBottom": "1px solid #2a2a2a"
+        },
+        "title": {
+          "fontSize": "1.125rem",
+          "fontWeight": 600,
+          "color": "#ffffff",
+          "marginBottom": "0.25rem"
+        },
+        "subtitle": {
+          "fontSize": "0.875rem",
+          "color": "#a0a0a0",
+          "fontWeight": 400
+        },
+        "meta": {
+          "fontSize": "0.875rem",
+          "color": "#666666",
+          "fontWeight": 400
+        }
+      },
+      "iconCard": {
+        "base": {
+          "display": "flex",
+          "alignItems": "center",
+          "padding": "1.25rem",
+          "backgroundColor": "#1a1a1a",
+          "borderRadius": "12px",
+          "border": "1px solid #333333",
+          "gap": "1rem"
+        },
+        "icon": {
+          "size": "3rem",
+          "borderRadius": "8px",
+          "backgroundColor": "#333333",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center"
+        },
+        "content": {
+          "flex": 1
+        },
+        "title": {
+          "fontSize": "1.125rem",
+          "fontWeight": 600,
+          "color": "#ffffff",
+          "marginBottom": "0.5rem"
+        },
+        "description": {
+          "fontSize": "0.875rem",
+          "color": "#a0a0a0",
+          "lineHeight": 1.4
+        }
+      },
+      "highlightedCard": {
+        "base": {
+          "backgroundColor": "#2a00d1",
+          "color": "#ffffff",
+          "borderColor": "#4a20f1"
+        },
+        "title": {
+          "color": "#ffffff"
+        },
+        "description": {
+          "color": "rgba(255, 255, 255, 0.8)"
+        }
+      }
+    },
+    "patterns": {
+      "sectionLayout": {
+        "structure": "Header + List/Grid of Cards",
+        "spacing": "2rem between sections",
+        "alignment": "Left-aligned headers, consistent card spacing"
+      },
+      "cardGrid": {
+        "responsive": "1 column mobile, 2 columns tablet, 2+ columns desktop",
+        "gap": "1.5rem",
+        "aspectRatio": "Auto height based on content"
+      },
+      "listLayout": {
+        "structure": "Alternating background colors for rows",
+        "dividers": "Subtle bottom borders between items",
+        "spacing": "Consistent vertical padding"
+      },
+      "emphasis": {
+        "primary": "Brand color background for most important items",
+        "secondary": "Increased font weight for titles",
+        "hierarchy": "Size and color contrast for information levels"
+      }
+    },
+    "interactions": {
+      "hover": {
+        "cards": "Subtle lift with increased shadow",
+        "duration": "200ms ease transition"
+      },
+      "focus": {
+        "outline": "2px solid #2a00d1",
+        "offset": "2px"
+      }
+    },
+    "accessibility": {
+      "contrast": {
+        "primary": "High contrast white text on dark backgrounds",
+        "secondary": "Medium contrast for supporting text",
+        "interactive": "Brand color meets accessibility standards"
+      },
+      "spacing": {
+        "touchTargets": "Minimum 44px height for interactive elements",
+        "readability": "Adequate line height and letter spacing"
+      }
+    },
+    "implementation": {
+      "framework": "Tailwind CSS compatible",
+      "components": "Modular, reusable card and list components",
+      "responsive": "Mobile-first approach with breakpoint scaling",
+      "animations": "Subtle transitions for enhanced UX"
+    }
+  }

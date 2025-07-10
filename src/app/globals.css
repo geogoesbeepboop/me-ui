@@ -32,7 +32,7 @@
   --space-xlarge: 3rem;
   --space-xxlarge: 6rem;
   --content-max-width: 800px;
-  --container-max-width: 1200px;
+  --container-max-width: var(--container-max-width);
   --gutter: 2rem;
 }
 
@@ -44,6 +44,12 @@
 
 .habibi-regular {
   font-family: "Habibi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lovers-quarrel-regular {
+  font-family: "Lovers Quarrel", cursive;
   font-weight: 400;
   font-style: normal;
 }

@@ -245,9 +245,10 @@
   
   .pc-user-text {
     display: flex;
-    align-items: flex-start;
+    align-items:center;
     flex-direction: column;
     gap: 6px;
+    font-family: "Habibi", serif;
   }
   
   .pc-handle {
@@ -438,10 +439,9 @@
       font-size: 9px;
     }
   
-    .pc-contact-btn {
+    .pc-cr{
       padding: 5px 10px;
       font-size: 10px;
-      border-radius: 50px;
     }
   }
   
