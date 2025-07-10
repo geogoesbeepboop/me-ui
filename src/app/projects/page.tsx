@@ -7,7 +7,7 @@ import { FaPencilRuler, FaCode, FaFlask, FaRocket, FaArchive } from "react-icons
 const projects: Project[] = [
   {
     id: "1",
-    title: "Minimal Blog",
+    title: "Cali",
     description: "A clean, dark-themed blog platform focused on typography and reading experience.",
     image: "/window.svg",
     techStack: ["Next.js", "TypeScript", "Vercel"],

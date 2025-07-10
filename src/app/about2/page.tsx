@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import FlowingMenu from '../../components/FlowingMenu';
 import Image from 'next/image';
 import styles from './page.module.css';
+import { motion } from 'framer-motion';
 
 const sections = [
   {
@@ -54,11 +55,41 @@ export default function About2() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
   const topRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const handleSectionClick = (sectionKey: string) => {
     setSelectedSection(sectionKey);
   };
 
+  const scrollToTop = () => {
+    setSelectedSection(null);
+    // Scroll to the absolute top of the viewport
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Also scroll the document element to ensure we're at the very beginning
+    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+    // Force scroll to the very beginning after a short delay to ensure it works
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      document.documentElement.scrollTo({ top: 0, behavior: 'auto' });
+    }, 20);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // Show back to top when user is near the bottom
+      if (scrollY + windowHeight > documentHeight - 200) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [])
   useEffect(() => {
     if (selectedSection && sectionRefs.current[selectedSection]) {
       sectionRefs.current[selectedSection]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -68,55 +99,54 @@ export default function About2() {
   const selectedSectionData = sections.find(section => section.key === selectedSection);
 
   return (
-    <main className={styles.about2Main}>
+    <main id='about2main' className={styles.about2Main}>
       {/* FlowingMenu Container */}
       <div className={styles.flowingMenuContainer} ref={topRef}>
-        <FlowingMenu 
-          items={menuItems} 
+        <FlowingMenu
+          items={menuItems}
           isCollapsed={false}
           onSectionClick={handleSectionClick}
         />
       </div>
-      {/* Content Container */}
-      <div className={styles.contentContainer}>
-        {sections.map(section => (
-          <div
-            key={section.key}
-            ref={el => { sectionRefs.current[section.key] = el; }}
-            style={{ display: selectedSection === section.key ? 'block' : 'none' }}
-          >
-            <div className={styles.sectionContent}>
-              <div className={styles.textContent}>
-                <h2 className={styles.sectionTitle}>{section.title}</h2>
-                <p className={styles.sectionText}>{section.text}</p>
-              </div>
-              <div className={styles.imageContent}>
-                <Image
-                  src={section.image}
-                  alt={section.imageAlt}
-                  width={400}
-                  height={300}
-                  className={styles.sectionImage}
-                />
+      {/* Only render content container if a section is selected */}
+      {selectedSection && (
+        <div className={styles.contentContainer}>
+          {sections.map(section => (
+            <div
+              key={section.key}
+              ref={el => { sectionRefs.current[section.key] = el; }}
+              style={{ display: selectedSection === section.key ? 'block' : 'none' }}
+            >
+              <div className={styles.sectionContent}>
+                <div className={styles.textContent}>
+                  <h2 className={styles.sectionTitle}>{section.title}</h2>
+                  <p className={styles.sectionText}>{section.text}</p>
+                </div>
+                <div className={styles.imageContent}>
+                  <Image
+                    src={section.image}
+                    alt={section.imageAlt}
+                    width={400}
+                    height={300}
+                    className={styles.sectionImage}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-        {!selectedSection && (
-          <div className={styles.placeholderContent}>
-            <h2>Click on a menu item to explore</h2>
-            <p>Select any section from the menu to learn more about me</p>
-          </div>
-        )}
-        {selectedSection && (
-          <button
-            className={styles.backToTopBtn}
-            onClick={() => topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-          >
-            Back to Top
-          </button>
-        )}
-      </div>
+          ))}
+          {showBackToTop && (
+            <motion.button
+              className={styles.backToTopBtn}
+              onClick={scrollToTop}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+            >
+              Back to Top
+            </motion.button>
+          )}
+        </div>
+      )}
     </main>
   );
 }
