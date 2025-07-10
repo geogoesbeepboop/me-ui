@@ -78,15 +78,18 @@ export default function Projects() {
             </div>
             {/* Content Section */}
             <div className={styles.projectContent}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <h3 className={styles.projectTitle} style={{ margin: 0 }}>{project.title}</h3>
-                <span
-                  className={`${styles.statusIndicator} ${styles.statusRight}`}
-                  style={{ color: statusMap[project.status].color }}
-                >
-                  {statusMap[project.status].icon}
-                  <span style={{ marginLeft: 4 }}>{statusMap[project.status].label}</span>
-                </span>
+              <div className={styles.projectHeader}>
+                <h3 className={styles.projectTitle}>{project.title}</h3>
+                <div className={styles.statusContainer}>
+                  <span className={styles.statusLabel}>Status:</span>
+                  <span
+                    className={styles.statusIndicator}
+                    style={{ color: statusMap[project.status].color }}
+                  >
+                    {statusMap[project.status].icon}
+                    <span className={styles.statusText}>{statusMap[project.status].label}</span>
+                  </span>
+                </div>
               </div>
               <p className={styles.projectDescription}>{project.description}</p>
               <div className={styles.projectTechStack}>
