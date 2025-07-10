@@ -89,4 +89,5 @@ export interface Project {
   image?: string; // Optional image URL
   techStack: string[];
   link?: string; // Optional external or internal link
+  status: 'design' | 'development' | 'beta' | 'production' | 'archived'; // Development stage
 } 

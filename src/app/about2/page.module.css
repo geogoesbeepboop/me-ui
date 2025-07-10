@@ -105,6 +105,30 @@
   font-weight: 400;
 }
 
+.backToTopBtn {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  z-index: 100;
+  background: linear-gradient(135deg, #2a00d1 0%, #4a00e0 100%);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.85em 2.2em;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 24px rgba(42,0,209,0.18);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.backToTopBtn:hover, .backToTopBtn:focus {
+  background: linear-gradient(135deg, #4a00e0 0%, #2a00d1 100%);
+  box-shadow: 0 8px 32px rgba(42,0,209,0.25);
+  outline: none;
+  transform: translateY(-2px) scale(1.04);
+}
+
 @media (max-width: 1024px) {
   .about2Main, .contentContainer {
     padding: var(--space-large) var(--space-medium);

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Project } from "@/types";
 import styles from "./page.module.css";
+import { FaPencilRuler, FaCode, FaFlask, FaRocket, FaArchive } from "react-icons/fa";
 
 const projects: Project[] = [
   {
@@ -10,7 +11,8 @@ const projects: Project[] = [
     description: "A clean, dark-themed blog platform focused on typography and reading experience.",
     image: "/window.svg",
     techStack: ["Next.js", "TypeScript", "Vercel"],
-    link: "#"
+    link: "#",
+    status: "production"
   },
   {
     id: "2",
@@ -18,9 +20,38 @@ const projects: Project[] = [
     description: "A portfolio site with atmospheric imagery and subtle interactions.",
     image: "/me.png",
     techStack: ["React", "Framer Motion", "CSS Modules"],
-    link: "#"
+    link: "#",
+    status: "design"
   }
 ];
+
+const statusMap = {
+  design: {
+    label: "Design",
+    color: "#2a00d1",
+    icon: <FaPencilRuler />
+  },
+  development: {
+    label: "Development",
+    color: "#00bcd4",
+    icon: <FaCode />
+  },
+  beta: {
+    label: "Beta",
+    color: "#ffc107",
+    icon: <FaFlask />
+  },
+  production: {
+    label: "Production",
+    color: "#4caf50",
+    icon: <FaRocket />
+  },
+  archived: {
+    label: "Archived",
+    color: "#888888",
+    icon: <FaArchive />
+  }
+};
 
 export default function Projects() {
   return (
@@ -47,7 +78,16 @@ export default function Projects() {
             </div>
             {/* Content Section */}
             <div className={styles.projectContent}>
-              <h3 className={styles.projectTitle}>{project.title}</h3>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <h3 className={styles.projectTitle} style={{ margin: 0 }}>{project.title}</h3>
+                <span
+                  className={`${styles.statusIndicator} ${styles.statusRight}`}
+                  style={{ color: statusMap[project.status].color }}
+                >
+                  {statusMap[project.status].icon}
+                  <span style={{ marginLeft: 4 }}>{statusMap[project.status].label}</span>
+                </span>
+              </div>
               <p className={styles.projectDescription}>{project.description}</p>
               <div className={styles.projectTechStack}>
                 {project.techStack.map(tech => (

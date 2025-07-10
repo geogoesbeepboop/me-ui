@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import FlowingMenu from '../../components/FlowingMenu';
 import Image from 'next/image';
 import styles from './page.module.css';
@@ -52,47 +52,69 @@ const menuItems = [
 
 export default function About2() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
+  const topRef = useRef<HTMLDivElement>(null);
+  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const handleSectionClick = (sectionKey: string) => {
     setSelectedSection(sectionKey);
   };
+
+  useEffect(() => {
+    if (selectedSection && sectionRefs.current[selectedSection]) {
+      sectionRefs.current[selectedSection]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedSection]);
 
   const selectedSectionData = sections.find(section => section.key === selectedSection);
 
   return (
     <main className={styles.about2Main}>
       {/* FlowingMenu Container */}
-      <div className={styles.flowingMenuContainer}>
+      <div className={styles.flowingMenuContainer} ref={topRef}>
         <FlowingMenu 
           items={menuItems} 
           isCollapsed={false}
           onSectionClick={handleSectionClick}
         />
       </div>
-      
       {/* Content Container */}
       <div className={styles.contentContainer}>
-        {selectedSectionData ? (
-          <div className={styles.sectionContent}>
-            <div className={styles.textContent}>
-              <h2 className={styles.sectionTitle}>{selectedSectionData.title}</h2>
-              <p className={styles.sectionText}>{selectedSectionData.text}</p>
-            </div>
-            <div className={styles.imageContent}>
-              <Image
-                src={selectedSectionData.image}
-                alt={selectedSectionData.imageAlt}
-                width={400}
-                height={300}
-                className={styles.sectionImage}
-              />
+        {sections.map(section => (
+          <div
+            key={section.key}
+            ref={el => { sectionRefs.current[section.key] = el; }}
+            style={{ display: selectedSection === section.key ? 'block' : 'none' }}
+          >
+            <div className={styles.sectionContent}>
+              <div className={styles.textContent}>
+                <h2 className={styles.sectionTitle}>{section.title}</h2>
+                <p className={styles.sectionText}>{section.text}</p>
+              </div>
+              <div className={styles.imageContent}>
+                <Image
+                  src={section.image}
+                  alt={section.imageAlt}
+                  width={400}
+                  height={300}
+                  className={styles.sectionImage}
+                />
+              </div>
             </div>
           </div>
-        ) : (
+        ))}
+        {!selectedSection && (
           <div className={styles.placeholderContent}>
             <h2>Click on a menu item to explore</h2>
             <p>Select any section from the menu to learn more about me</p>
           </div>
+        )}
+        {selectedSection && (
+          <button
+            className={styles.backToTopBtn}
+            onClick={() => topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+          >
+            Back to Top
+          </button>
         )}
       </div>
     </main>

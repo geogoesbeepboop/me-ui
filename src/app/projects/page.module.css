@@ -91,6 +91,26 @@
   letter-spacing: 0.01em;
 }
 
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 16px;
+  padding: 0.2em 0.7em;
+  background: rgba(42,0,209,0.13);
+  box-shadow: 0 2px 8px rgba(42,0,209,0.10), 0 1.5px 6px rgba(0,0,0,0.10);
+  border: 1.5px solid rgba(42,0,209,0.18);
+  /* color will be set inline for each status */
+  transition: box-shadow 0.2s;
+  z-index: 1;
+}
+
+.statusRight {
+  margin-left: auto;
+}
+
 @media (max-width: 900px) {
     .projectsGrid {
       grid-template-columns: 1fr;
