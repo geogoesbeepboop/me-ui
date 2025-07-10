@@ -110,7 +110,13 @@ export default function About() {
           <button
             key={section.key}
             className={`${styles.dot} ${activeSection === index ? styles.activeDot : ''}`}
-            onClick={() => scrollToSection(index)}
+            onClick={() => {
+              if (index === 0) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                scrollToSection(index);
+              }
+            }}
             aria-label={`Go to ${section.title}`}
           />
         ))}

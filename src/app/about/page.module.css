@@ -18,7 +18,12 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  /* margin-top: -5%; */
+}
+
+@media (min-width: 1200px) {
+  .storybookContent {
+    margin-top: -5%;
+  }
 }
 
 /* Section Navigation Dots */
@@ -181,9 +186,9 @@
   font-size: 2rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .storybookMain {
-    padding: var(--space-large) var(--space-medium);
+    padding: var(--space-small) var(--space-medium);
   }
   .storySection {
     flex-direction: column !important;
@@ -192,18 +197,20 @@
   }
   
   .sectionImageWrap {
-    width: 400px;
-    height: 320px;
+    width: 450px;
+    height: 350px;
   }
   
   .sectionHeader {
     font-size: 3.5rem;
     text-align: center;
+    margin-top: 0%;
   }
   
   .sectionText {
     font-size: 1.5rem;
     text-align: center;
+    margin-top: -5%;
   }
   
   .layoutCenter .sectionImageWrap {
