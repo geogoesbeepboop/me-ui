@@ -1,0 +1,100 @@
+.projectsSection {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.projectsHeader {
+  font-family: 'Habibi', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #fff;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+@media (max-width: 900px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projectCard {
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.16);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(42,0,209,0.18);
+}
+
+.projectImageContainer {
+  width: 100%;
+  aspect-ratio: 11/7;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.projectContent {
+  padding: .75rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.projectTitle {
+  font-family: 'Habibi', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+.projectDescription {
+  font-family: 'Habibi', serif;
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 95%;
+  margin: 0;
+}
+
+.projectTechStack {
+  display: flex;
+  gap: .85rem;
+  margin-top: .6rem;
+}
+
+.techBadge {
+  padding: 0.4rem .7rem;
+  border-radius: 9999px;
+  font-size: .85rem;
+  font-weight: 500;
+  background: #2a2a2a;
+  color: #cccccc;
+  font-family: 'Habibi', serif;
+  letter-spacing: 0.01em;
+}

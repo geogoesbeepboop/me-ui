@@ -139,11 +139,11 @@ export default function WorkPage() {
       {/* Header Section */}
       <section className={styles.sectionHeader}>
         <h1 className={styles.sectionTitle}>
-          Professional Experience
+          Professional Overview
         </h1>
-        <p className={styles.sectionSubtitle}>
+        {/* <p className={styles.sectionSubtitle}>
           A comprehensive overview of my professional journey, skills, and achievements
-        </p>
+        </p> */}
       </section>
 
       {/* Tab Navigation */}

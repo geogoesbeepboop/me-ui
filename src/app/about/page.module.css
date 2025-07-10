@@ -27,7 +27,7 @@
 .sectionDots {
   position: fixed;
   top: 50%;
-  right: 2rem;
+  right: 3rem;
   transform: translateY(-50%);
   z-index: 50;
   display: flex;

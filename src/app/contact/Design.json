@@ -1,0 +1,222 @@
+{
+    "designSystem": {
+      "name": "Modern Contact Form System",
+      "version": "1.0.0",
+      "theme": "dark",
+      "description": "Clean, professional contact form with emphasis on typography hierarchy and structured layout"
+    },
+    "colorPalette": {
+      "primary": "#2a00d1",
+      "background": "#000000",
+      "surface": "#1a1a1a",
+      "text": {
+        "primary": "#ffffff",
+        "secondary": "#cccccc",
+        "muted": "#888888",
+        "placeholder": "#666666"
+      },
+      "accent": "#2a00d1",
+      "success": "#4ade80",
+      "border": "#333333"
+    },
+    "typography": {
+      "hierarchy": {
+        "hero": {
+          "fontSize": "3.5rem",
+          "fontWeight": "700",
+          "lineHeight": "1.1",
+          "letterSpacing": "-0.02em",
+          "textTransform": "uppercase",
+          "description": "Large, bold, attention-grabbing headers"
+        },
+        "sectionTitle": {
+          "fontSize": "1.125rem",
+          "fontWeight": "600",
+          "color": "text.secondary",
+          "description": "Section identifiers with moderate emphasis"
+        },
+        "body": {
+          "fontSize": "1rem",
+          "fontWeight": "400",
+          "lineHeight": "1.6",
+          "color": "text.secondary"
+        },
+        "label": {
+          "fontSize": "0.875rem",
+          "fontWeight": "500",
+          "color": "text.primary"
+        }
+      },
+      "emphasis": {
+        "ampersand": {
+          "description": "Special character styling with visual prominence",
+          "treatment": "maintains same weight as surrounding text"
+        }
+      }
+    },
+    "layout": {
+      "structure": "asymmetric-split",
+      "grid": {
+        "columns": 2,
+        "ratio": "1:1",
+        "gap": "4rem",
+        "breakpoint": "lg"
+      },
+      "spacing": {
+        "section": "3rem",
+        "element": "1.5rem",
+        "formField": "1rem",
+        "inline": "0.5rem"
+      },
+      "container": {
+        "maxWidth": "1200px",
+        "padding": "2rem"
+      }
+    },
+    "components": {
+      "sectionHeader": {
+        "pattern": "comment-style-prefix",
+        "style": {
+          "fontSize": "typography.sectionTitle.fontSize",
+          "color": "text.muted",
+          "marginBottom": "spacing.element",
+          "prefix": "// "
+        }
+      },
+      "heroTitle": {
+        "pattern": "large-statement-text",
+        "style": {
+          "fontSize": "typography.hero.fontSize",
+          "fontWeight": "typography.hero.fontWeight",
+          "textTransform": "typography.hero.textTransform",
+          "lineHeight": "typography.hero.lineHeight",
+          "marginBottom": "spacing.element"
+        }
+      },
+      "form": {
+        "layout": "stacked",
+        "fields": {
+          "spacing": "spacing.formField",
+          "label": {
+            "position": "above",
+            "required": {
+              "indicator": "*",
+              "color": "accent"
+            }
+          },
+          "input": {
+            "style": "minimal-dark",
+            "background": "transparent",
+            "border": "1px solid border",
+            "borderRadius": "0.375rem",
+            "padding": "0.75rem 1rem",
+            "fontSize": "1rem",
+            "color": "text.primary",
+            "placeholder": {
+              "color": "text.placeholder"
+            },
+            "focus": {
+              "borderColor": "accent",
+              "outline": "none"
+            }
+          },
+          "textarea": {
+            "extends": "input",
+            "minHeight": "120px",
+            "resize": "vertical"
+          }
+        },
+        "button": {
+          "style": "primary-pill",
+          "background": "success",
+          "color": "background",
+          "padding": "0.75rem 2rem",
+          "borderRadius": "2rem",
+          "fontSize": "1rem",
+          "fontWeight": "500",
+          "border": "none",
+          "hover": {
+            "opacity": "0.9"
+          }
+        }
+      },
+      "socialLinks": {
+        "pattern": "inline-text-links",
+        "style": {
+          "display": "inline",
+          "separator": " / ",
+          "color": "text.secondary",
+          "fontSize": "0.875rem",
+          "hover": {
+            "color": "text.primary"
+          }
+        }
+      },
+      "contactInfo": {
+        "pattern": "icon-text-pairs",
+        "style": {
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "0.5rem",
+          "color": "text.secondary",
+          "fontSize": "0.875rem"
+        }
+      }
+    },
+    "patterns": {
+      "informationHierarchy": {
+        "primary": "Large hero statements for main actions",
+        "secondary": "Descriptive text for context and guidance",
+        "tertiary": "Links and contact information"
+      },
+      "whitespace": {
+        "philosophy": "generous-spacing",
+        "verticalRhythm": "consistent-multipliers",
+        "breathingRoom": "wide-margins"
+      },
+      "interactionDesign": {
+        "formFeedback": "subtle-focus-states",
+        "buttonDesign": "pill-shaped-primary-actions",
+        "hoverStates": "opacity-based-transitions"
+      }
+    },
+    "responsive": {
+      "mobile": {
+        "layout": "single-column",
+        "heroFontSize": "2.5rem",
+        "padding": "1rem",
+        "spacing": "reduced-by-25-percent"
+      },
+      "tablet": {
+        "layout": "single-column",
+        "heroFontSize": "3rem"
+      },
+      "desktop": {
+        "layout": "two-column",
+        "heroFontSize": "3.5rem"
+      }
+    },
+    "accessibility": {
+      "contrast": "wcag-aa-compliant",
+      "focusIndicators": "visible-outline",
+      "labelAssociation": "explicit-for-attributes",
+      "requiredFields": "asterisk-indicator"
+    },
+    "usage": {
+      "bestPractices": [
+        "Use generous whitespace for visual hierarchy",
+        "Maintain consistent spacing ratios",
+        "Keep form fields minimal and clean",
+        "Use subtle hover states for interactive elements",
+        "Ensure strong contrast for readability",
+        "Group related information logically"
+      ],
+      "commonElements": [
+        "Hero sections with large typography",
+        "Clean form layouts with stacked fields",
+        "Subtle section dividers",
+        "Pill-shaped call-to-action buttons",
+        "Inline social/contact links"
+      ]
+    }
+  }

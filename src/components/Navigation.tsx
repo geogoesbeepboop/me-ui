@@ -21,15 +21,16 @@ export default function Navigation() {
     router.push(items[index].href);
   };
   return (
-    <div style={{ height: "50px", position: "relative", display: "flex", justifyContent: "center",}}>
+    <div style={{ height: "50px", position: "relative", display: "flex", 
+    justifyContent: "center", zIndex: 1000}}>
       <GooeyNav
         items={items}
-        particleCount={15}
+        particleCount={0}
         particleDistances={[90, 10]}
         particleR={100}
         activeIndex={activeIndex === -1 ? 0 : activeIndex}
-        animationTime={600}
-        timeVariance={300}
+        animationTime={0}
+        timeVariance={0}
         colors={[1, 2, 3, 1, 2, 3, 1, 4]}
         onTabChange={handleTabChange}
       />

@@ -1,50 +1,68 @@
 "use client";
+import Image from "next/image";
+import { Project } from "@/types";
+import styles from "./page.module.css";
+
+const projects: Project[] = [
+  {
+    id: "1",
+    title: "Minimal Blog",
+    description: "A clean, dark-themed blog platform focused on typography and reading experience.",
+    image: "/window.svg",
+    techStack: ["Next.js", "TypeScript", "Vercel"],
+    link: "#"
+  },
+  {
+    id: "2",
+    title: "Portfolio Gallery",
+    description: "A portfolio site with atmospheric imagery and subtle interactions.",
+    image: "/me.png",
+    techStack: ["React", "Framer Motion", "CSS Modules"],
+    link: "#"
+  }
+];
+
 export default function Projects() {
   return (
-    <main>
-      <section id="projects" style={{
-        maxWidth: "var(--content-max-width)",
-        margin: "0 auto",
-        padding: "var(--space-xlarge) 0"
-      }}>
-        <h2 style={{
-          fontFamily: "var(--font-serif)",
-          fontSize: "var(--font-size-h2)",
-          fontWeight: "var(--font-weight-regular)",
-          marginBottom: "var(--space-medium)"
-        }}>Projects</h2>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "var(--space-large)"
-        }}>
-          {/* Dummy project cards */}
-          <div style={{
-            background: "var(--color-bg-secondary)",
-            borderRadius: "1rem",
-            padding: "var(--space-large)",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-            color: "var(--color-text-primary)"
-          }}>
-            <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: "var(--font-weight-regular)", fontSize: "2rem", margin: 0 }}>Minimal Blog</h3>
-            <p style={{ color: "var(--color-text-secondary)", margin: "var(--space-small) 0" }}>
-              A clean, dark-themed blog platform focused on typography and reading experience.
-            </p>
+    <section id="projects" className={styles.projectsSection}>
+      <h2 className={styles.projectsHeader}>Projects</h2>
+      <div className={styles.projectsGrid}>
+        {projects.map(project => (
+          <div
+            key={project.id}
+            className={styles.projectCard}
+            onClick={() => project.link && window.open(project.link, "_blank")}
+          >
+            {/* Image Container */}
+            <div className={styles.projectImageContainer}>
+              {project.image && (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={800}
+                  height={350}
+                  className={styles.projectImage}
+                />
+              )}
+            </div>
+            {/* Content Section */}
+            <div className={styles.projectContent}>
+              <h3 className={styles.projectTitle}>{project.title}</h3>
+              <p className={styles.projectDescription}>{project.description}</p>
+              <div className={styles.projectTechStack}>
+                {project.techStack.map(tech => (
+                  <span
+                    key={tech}
+                    className={styles.techBadge}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-          <div style={{
-            background: "var(--color-bg-secondary)",
-            borderRadius: "1rem",
-            padding: "var(--space-large)",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-            color: "var(--color-text-primary)"
-          }}>
-            <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: "var(--font-weight-regular)", fontSize: "2rem", margin: 0 }}>Portfolio Gallery</h3>
-            <p style={{ color: "var(--color-text-secondary)", margin: "var(--space-small) 0" }}>
-              A portfolio site with atmospheric imagery and subtle interactions.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+        ))}
+      </div>
+    </section>
   );
 } 

@@ -1,0 +1,330 @@
+{
+    "designSystem": {
+      "name": "Portfolio Design System",
+      "version": "1.0.0",
+      "description": "Modern, minimalist design system for creative portfolio websites with dark mode aesthetics",
+      
+      "colorPalette": {
+        "primary": "#2a00d1",
+        "background": {
+          "primary": "#000000",
+          "secondary": "#1a1a1a",
+          "tertiary": "#2a2a2a"
+        },
+        "text": {
+          "primary": "#ffffff",
+          "secondary": "#cccccc",
+          "muted": "#888888"
+        },
+        "accent": {
+          "bright": "#ffffff",
+          "subtle": "#333333"
+        }
+      },
+      
+      "typography": {
+        "fontFamilies": {
+          "primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "display": "Inter, sans-serif",
+          "mono": "JetBrains Mono, Consolas, 'Courier New', monospace"
+        },
+        "scales": {
+          "hero": {
+            "fontSize": "4rem",
+            "lineHeight": "1.1",
+            "fontWeight": "800",
+            "letterSpacing": "-0.02em"
+          },
+          "h1": {
+            "fontSize": "2.5rem",
+            "lineHeight": "1.2",
+            "fontWeight": "700",
+            "letterSpacing": "-0.015em"
+          },
+          "h2": {
+            "fontSize": "2rem",
+            "lineHeight": "1.3",
+            "fontWeight": "600",
+            "letterSpacing": "-0.01em"
+          },
+          "h3": {
+            "fontSize": "1.5rem",
+            "lineHeight": "1.4",
+            "fontWeight": "600"
+          },
+          "body": {
+            "fontSize": "1rem",
+            "lineHeight": "1.6",
+            "fontWeight": "400"
+          },
+          "small": {
+            "fontSize": "0.875rem",
+            "lineHeight": "1.5",
+            "fontWeight": "400"
+          },
+          "caption": {
+            "fontSize": "0.75rem",
+            "lineHeight": "1.4",
+            "fontWeight": "500",
+            "textTransform": "uppercase",
+            "letterSpacing": "0.05em"
+          }
+        }
+      },
+      
+      "layout": {
+        "container": {
+          "maxWidth": "1200px",
+          "padding": "0 2rem",
+          "margin": "0 auto"
+        },
+        "grid": {
+          "columns": 12,
+          "gap": "2rem",
+          "breakpoints": {
+            "mobile": "768px",
+            "tablet": "1024px",
+            "desktop": "1200px"
+          }
+        },
+        "spacing": {
+          "xs": "0.5rem",
+          "sm": "1rem",
+          "md": "1.5rem",
+          "lg": "2rem",
+          "xl": "3rem",
+          "2xl": "4rem",
+          "3xl": "6rem",
+          "4xl": "8rem"
+        }
+      },
+      
+      "components": {
+        "hero": {
+          "structure": "Full-width section with centered content",
+          "elements": {
+            "subtitle": {
+              "position": "above-title",
+              "style": "caption",
+              "prefix": "// "
+            },
+            "title": {
+              "style": "hero",
+              "maxWidth": "800px",
+              "textAlign": "center"
+            },
+            "divider": {
+              "type": "code-style",
+              "pattern": "</ ---------- >",
+              "color": "primary"
+            }
+          },
+          "spacing": {
+            "paddingY": "4xl",
+            "elementGap": "lg"
+          }
+        },
+        
+        "projectGrid": {
+          "structure": "Two-column grid on desktop, single column on mobile",
+          "gridConfig": {
+            "desktop": "1fr 1fr",
+            "mobile": "1fr",
+            "gap": "3xl"
+          }
+        },
+        
+        "projectCard": {
+          "structure": "Image container + content section",
+          "elements": {
+            "imageContainer": {
+              "aspectRatio": "16:10",
+              "borderRadius": "0.5rem",
+              "overflow": "hidden",
+              "background": "gradient or solid color"
+            },
+            "content": {
+              "padding": "lg 0",
+              "gap": "md"
+            },
+            "title": {
+              "style": "h3",
+              "color": "text.primary"
+            },
+            "description": {
+              "style": "body",
+              "color": "text.secondary",
+              "maxWidth": "90%"
+            },
+            "techStack": {
+              "display": "flex",
+              "gap": "sm",
+              "marginTop": "md"
+            }
+          },
+          "interactions": {
+            "hover": {
+              "imageScale": "1.05",
+              "transition": "all 0.3s ease"
+            }
+          }
+        },
+        
+        "techBadge": {
+          "structure": "Pill-shaped container with label",
+          "styling": {
+            "padding": "0.25rem 0.75rem",
+            "borderRadius": "9999px",
+            "fontSize": "small",
+            "fontWeight": "500"
+          },
+          "variants": {
+            "default": {
+              "background": "background.tertiary",
+              "color": "text.secondary"
+            },
+            "primary": {
+              "background": "primary",
+              "color": "white"
+            },
+            "outline": {
+              "border": "1px solid background.tertiary",
+              "background": "transparent",
+              "color": "text.secondary"
+            }
+          }
+        },
+        
+        "deviceMockup": {
+          "structure": "Container with device frame + content",
+          "variants": {
+            "desktop": {
+              "frame": "MacBook-style with rounded corners",
+              "aspectRatio": "16:10",
+              "shadow": "large"
+            },
+            "mobile": {
+              "frame": "iPhone-style with rounded corners",
+              "aspectRatio": "9:19.5",
+              "shadow": "medium"
+            }
+          },
+          "styling": {
+            "background": "linear-gradient or solid",
+            "borderRadius": "device-specific",
+            "padding": "device-specific"
+          }
+        }
+      },
+      
+      "patterns": {
+        "codeElements": {
+          "description": "Programming-inspired visual elements",
+          "examples": [
+            "// Comment-style labels",
+            "</ Divider lines />",
+            "Function-style naming",
+            "Monospace accents"
+          ],
+          "usage": "Subtitles, dividers, navigation elements"
+        },
+        
+        "gradients": {
+          "background": [
+            "linear-gradient(135deg, #1a1a1a 0%, #000000 100%)",
+            "linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)"
+          ],
+          "accent": [
+            "linear-gradient(135deg, #2a00d1 0%, #4a00e0 100%)",
+            "linear-gradient(135deg, #ffffff 0%, #cccccc 100%)"
+          ]
+        },
+        
+        "imageStyles": {
+          "projectScreenshots": {
+            "treatment": "Clean, high-contrast screenshots",
+            "presentation": "Device mockups or clean borders",
+            "aspectRatio": "16:10 or 4:3",
+            "quality": "High resolution, crisp details"
+          },
+          "placeholders": {
+            "style": "Solid colors or subtle gradients",
+            "fallback": "Icon or text-based representation"
+          }
+        }
+      },
+      
+      "animations": {
+        "transitions": {
+          "default": "all 0.3s ease",
+          "slow": "all 0.5s ease",
+          "fast": "all 0.15s ease"
+        },
+        "hover": {
+          "imageScale": "transform: scale(1.05)",
+          "cardLift": "transform: translateY(-4px)",
+          "colorShift": "color transition"
+        },
+        "loading": {
+          "skeleton": "shimmer effect",
+          "fade": "opacity transitions"
+        }
+      },
+      
+      "responsive": {
+        "mobile": {
+          "grid": "Single column",
+          "typography": "Reduce hero by 25%",
+          "spacing": "Reduce by 50%",
+          "images": "Full width"
+        },
+        "tablet": {
+          "grid": "Two columns for some sections",
+          "typography": "Slightly reduced",
+          "spacing": "Moderate reduction"
+        },
+        "desktop": {
+          "grid": "Full multi-column layouts",
+          "typography": "Full scale",
+          "spacing": "Full scale"
+        }
+      },
+      
+      "accessibility": {
+        "contrast": {
+          "minimum": "4.5:1 for normal text",
+          "enhanced": "7:1 for better readability"
+        },
+        "focusStates": {
+          "outline": "2px solid primary",
+          "offset": "2px"
+        },
+        "semantics": {
+          "headings": "Proper hierarchy (h1, h2, h3)",
+          "landmarks": "main, section, nav, header, footer",
+          "images": "Alt text for all images"
+        }
+      },
+      
+      "designPrinciples": {
+        "visual": [
+          "High contrast for readability",
+          "Generous white space",
+          "Consistent visual hierarchy",
+          "Clean, minimal aesthetics"
+        ],
+        "content": [
+          "Scannable information architecture",
+          "Progressive disclosure",
+          "Clear calls-to-action",
+          "Professional yet approachable tone"
+        ],
+        "technical": [
+          "Performance-first approach",
+          "Mobile-responsive design",
+          "Accessibility compliance",
+          "SEO optimization"
+        ]
+      }
+    }
+  }

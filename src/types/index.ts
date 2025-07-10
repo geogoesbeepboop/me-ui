@@ -79,4 +79,14 @@ export interface GooeyNavProps {
   timeVariance?: number;
   colors?: number[];
   onTabChange?: (index: number) => void;
+}
+
+// Project type for Projects page
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image?: string; // Optional image URL
+  techStack: string[];
+  link?: string; // Optional external or internal link
 } 
