@@ -184,7 +184,7 @@ a.secondary {
 }
 
 .h2 {
-  font-family: var(--font-habibi-regular);
+  font-family: var(--font-primary);
   font-size: var(--font-size-h2-sm);
   font-weight: var(--font-weight-regular);
   color: var(--color-text-secondary);

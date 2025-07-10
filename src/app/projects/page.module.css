@@ -1,13 +1,13 @@
 .projectsSection {
   max-width: var(--container-maxWidth);
-  margin: 0 auto;
-  padding: 0 4rem;
+  margin: var(--container-margin);
+  padding: var(--container-padding);
+  font-family: var(--font-primary);
 }
 
 .projectsHeader {
-  font-family: 'Habibi', serif;
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: var(--font-sectionTitle);
+  font-weight: var(--font-weight-bold);
   margin-bottom: 2rem;
   letter-spacing: -0.01em;
   text-align: center;
@@ -17,13 +17,7 @@
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-}
-
-@media (max-width: 900px) {
-  .projectsGrid {
-    grid-template-columns: 1fr;
-  }
+  gap: var(--spacing-section);
 }
 
 .projectCard {
@@ -59,14 +53,13 @@
 }
 
 .projectContent {
-  padding: .75rem 1rem 2rem 1rem;
+  padding: var(--spacing-element) var(--spacing-section) var(--spacing-section) var(--spacing-section);
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: var(--spacing-inline);
 }
 
 .projectTitle {
-  font-family: 'Habibi', serif;
   font-size: 1.25rem;
   font-weight: 400;
   color: #fff;
@@ -74,7 +67,6 @@
 }
 
 .projectDescription {
-  font-family: 'Habibi', serif;
   color: #cccccc;
   font-size: 1rem;
   line-height: 1.5;
@@ -84,8 +76,9 @@
 
 .projectTechStack {
   display: flex;
-  gap: .85rem;
-  margin-top: .6rem;
+  gap: var(--spacing-inline);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-element);
 }
 
 .techBadge {
@@ -95,6 +88,18 @@
   font-weight: 500;
   background: #2a2a2a;
   color: #cccccc;
-  font-family: 'Habibi', serif;
   letter-spacing: 0.01em;
 }
+
+@media (max-width: 900px) {
+    .projectsGrid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-element);
+    }
+    .projectContent {
+      padding: .75rem 1rem 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-inline);
+    }
+  }

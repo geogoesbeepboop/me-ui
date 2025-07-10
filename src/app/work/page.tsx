@@ -135,7 +135,7 @@ export default function WorkPage() {
   ];
 
   return (
-    <div className={styles.workPage}>
+    <section className={styles.workPage}>
       {/* Header Section */}
       <section className={styles.sectionHeader}>
         <h1 className={styles.sectionTitle}>
@@ -291,6 +291,6 @@ export default function WorkPage() {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }

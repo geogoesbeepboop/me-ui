@@ -2,9 +2,12 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
+  max-width: var(--container-maxWidth);
+  margin: 0 auto;
   background: transparent;
   display: flex;
   flex-direction: column;
+  padding: var(--container-padding);
 }
 
 .flowingMenuContainer {
@@ -24,14 +27,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: var(--container-padding);
 }
 
 .sectionContent {
   display: flex;
   align-items: center;
-  gap: 4rem;
-  max-width: 1200px;
+  gap: var(--spacing-section);
+  max-width: var(--container-maxWidth);
   width: 100%;
 }
 
@@ -41,21 +44,22 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-habibi-regular, 'Habibi', serif);
-  font-size: 3.5rem;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-regular);
   color: #fff;
-  margin-bottom: 2rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  margin-bottom: var(--spacing-element);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
 }
 
 .sectionText {
-  font-family: var(--font-habibi-regular, 'Habibi', serif);
+  font-family: var(--font-primary);
   color: var(--color-text-secondary, #a0a0a0);
   font-size: 1.5rem;
   line-height: 1.7;
   font-weight: 400;
+  margin-bottom: var(--spacing-element);
 }
 
 .imageContent {
@@ -85,7 +89,7 @@
 }
 
 .placeholderContent h2 {
-  font-family: var(--font-habibi-regular, 'Habibi', serif);
+  font-family: var(--font-primary);
   font-size: 2.5rem;
   font-weight: 400;
   color: #fff;
@@ -94,7 +98,7 @@
 }
 
 .placeholderContent p {
-  font-family: var(--font-habibi-regular, 'Habibi', serif);
+  font-family: var(--font-primary);
   color: var(--color-text-secondary, #a0a0a0);
   font-size: 1.25rem;
   line-height: 1.6;
@@ -102,9 +106,12 @@
 }
 
 @media (max-width: 1024px) {
+  .about2Main, .contentContainer {
+    padding: var(--space-large) var(--space-medium);
+  }
   .sectionContent {
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--spacing-element);
     text-align: center;
   }
   
@@ -123,12 +130,11 @@
 }
 
 @media (max-width: 768px) {
-  .contentContainer {
-    padding: 1rem;
+  .about2Main, .contentContainer {
+    padding: var(--space-medium) var(--space-small);
   }
-  
   .sectionContent {
-    gap: 2rem;
+    gap: var(--spacing-element);
   }
   
   .sectionTitle {
@@ -155,6 +161,13 @@
 }
 
 @media (max-width: 480px) {
+  .about2Main, .contentContainer {
+    padding: var(--space-small) var(--space-micro);
+  }
+  .sectionContent {
+    gap: var(--spacing-inline);
+  }
+  
   .sectionTitle {
     font-size: 2rem;
     margin-bottom: 1rem;

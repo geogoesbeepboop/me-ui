@@ -1,180 +1,173 @@
 .contactMain {
-  font-family: 'Habibi', regular;
-  color: var(--color-text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--container-padding);
+    font-family: var(--font-primary);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    max-width: var(--container-maxWidth);
+    margin: var(--container-margin);
 }
 
 .contactSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  border-radius: 1.5rem;
-  max-width: var(--container-maxWidth);
-  width: 100%;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12);
-  padding: var(--container-padding);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-section);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.12);
+    padding: var(--container-padding);
 }
 
 .leftPane {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 2rem;
 }
 
 .sectionHeader {
-  font-size: var(--font-sectionTitle);
-  color: var(--color-text-muted);
-  margin-bottom: var(--spacing-element);
-  font-family: inherit;
-  font-weight: var(--font-weight-semi);
-  letter-spacing: 0.05em;
-  opacity: 0.8;
-}
-
-.heroTitle {
-  font-size: var(--font-hero);
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
-  line-height: 1.1;
-  margin-bottom: var(--spacing-element);
-  font-family: inherit;
+    font-size: var(--font-hero);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-element);
+    font-family: inherit;
 }
 
 .description {
-  color: var(--color-text-secondary);
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-section);
-  font-family: inherit;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-section);
+    font-family: inherit;
 }
 
 .socialLinks {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-inline);
-  color: var(--color-text-secondary);
-  font-size: 0.875rem;
-  margin-bottom: var(--spacing-section);
+    display: flex;
+    align-items: center;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-section);
 }
 
 .socialLinks a {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
 .socialLinks a:hover {
-  color: var(--color-text-primary);
+    color: var(--color-text-primary);
 }
 
 .separator {
-  color: var(--color-text-muted);
-  margin: 0 0.5rem;
+    color: var(--color-text-muted);
+    margin: 0 0.5rem;
 }
 
 .contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-formField);
-  background: transparent;
-  padding: 0;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-formField);
+    background: transparent;
+    padding: 0;
+    justify-content: center;
 }
 
 .formField {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .formField label {
-  font-size: var(--font-label);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
-  margin-bottom: 0.25rem;
+    font-size: var(--font-label);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
 }
 
 .required {
-  color: var(--color-accent);
-  font-size: 1.1em;
-  margin-left: 0.1em;
+    color: var(--color-accent);
+    font-size: 1.1em;
+    margin-left: 0.1em;
 }
 
 .contactForm input,
 .contactForm textarea {
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: var(--form-padding);
-  font-size: 1rem;
-  color: var(--color-text-primary);
-  font-family: inherit;
-  transition: border-color 0.2s;
-  outline: none;
-  resize: none;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--form-padding);
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    font-family: inherit;
+    transition: border-color 0.2s;
+    outline: none;
+    resize: none;
 }
 
 .contactForm input::placeholder,
 .contactForm textarea::placeholder {
-  color: var(--color-text-placeholder);
-  opacity: 1;
+    color: var(--color-text-placeholder);
+    opacity: 1;
 }
 
 .contactForm input:focus,
 .contactForm textarea:focus {
-  border-color: var(--color-accent);
-  outline: none;
+    border-color: var(--color-accent);
+    outline: none;
 }
 
 .contactForm textarea {
-  min-height: var(--form-minHeight);
-  resize: vertical;
+    min-height: var(--form-minHeight);
+    resize: vertical;
 }
 
 .submitButton {
-  background: var(--color-accent);
-  color: var(--color-text-primary);
-  padding: var(--form-btn-padding);
-  border-radius: var(--radius-pill);
-  font-size: 1rem;
-  font-weight: var(--font-weight-medium);
-  border: none;
-  cursor: pointer;
-  margin: 0.5rem 6rem 0.5rem 6rem;
-  transition: opacity 0.2s;
+    background: var(--color-accent);
+    color: var(--color-text-primary);
+    padding: var(--form-btn-padding);
+    border-radius: var(--radius-pill);
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    border: none;
+    cursor: pointer;
+    margin: 0.5rem 6rem 0.5rem 6rem;
+    transition: opacity 0.2s;
 }
 
 .submitButton:hover {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 
 @media (max-width: 900px) {
-  .contactSection {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 1.5rem;
-  }
-  .leftPane {
-    padding-right: 0;
-    margin-bottom: 2rem;
-  }
-  .heroTitle {
-    font-size: 2.5rem;
-  }
+    .contactSection {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-element);
+        padding: var(--space-large);
+    }
+
+    .leftPane {
+        padding-right: 0;
+        margin-bottom: var(--spacing-element);
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
 }
 
 @media (max-width: 600px) {
-  .contactMain {
-    padding: 1rem;
-  }
-  .contactSection {
-    padding: 1rem;
-    gap: 1.5rem;
-  }
-  .heroTitle {
-    font-size: 2rem;
-  }
+    .contactMain {
+        padding: var(--space-small);
+    }
+
+    .contactSection {
+        padding: var(--space-small);
+        gap: var(--spacing-inline);
+    }
+
+    .heroTitle {
+        font-size: 2rem;
+    }
 }

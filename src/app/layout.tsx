@@ -31,7 +31,7 @@ export default function RootLayout({
             minHeight: "100vh",
             background: "var(--color-bg-primary)",
             color: "var(--color-text-primary)",
-            fontFamily: "var(--font-habibi-regular)",
+            fontFamily: "var(--font-primary)",
             padding: "var(--space-xlarge) var(--gutter)",
             position: "relative",
           }}

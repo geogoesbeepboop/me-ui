@@ -9,8 +9,7 @@ export default function Contact() {
     <main className={styles.contactMain}>
       <section className={styles.contactSection}>
         <div className={styles.leftPane}>
-          <div className={styles.sectionHeader}>// Get in touch</div>
-          <h1 className={styles.heroTitle}>Let's Talk</h1>
+          <h1 className={styles.sectionHeader}>Let's Talk</h1>
           <p className={styles.description}>
             Want to work together or just say hi? Fill out the form or email me directly.
           </p>
