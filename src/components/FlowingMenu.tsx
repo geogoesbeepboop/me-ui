@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { gsap } from "gsap";
 
 import "../styles/FlowingMenu.css";
@@ -11,21 +11,44 @@ interface MenuItemProps {
 
 interface FlowingMenuProps {
   items?: MenuItemProps[];
+  isCollapsed?: boolean;
+  onToggle?: () => void;
+  onSectionClick?: (sectionKey: string) => void;
 }
 
-const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
+const FlowingMenu: React.FC<FlowingMenuProps> = ({ 
+  items = [], 
+  isCollapsed = true,
+  onToggle,
+  onSectionClick
+}) => {
   return (
-    <div className="menu-wrap">
-      <nav className="menu">
+    <div className={`menu-wrap ${isCollapsed ? 'menu-collapsed' : 'menu-expanded'}`}>
+      {onToggle && (
+        <div className="menu-toggle" onClick={onToggle}>
+          <span className="toggle-text">{isCollapsed ? 'About Me' : 'Close'}</span>
+          <div className="toggle-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      )}
+      <nav className={`menu ${isCollapsed ? 'menu-hidden' : ''}`}>
         {items.map((item, idx) => (
-          <MenuItem key={idx} {...item} />
+          <MenuItem key={idx} {...item} onSectionClick={onSectionClick} />
         ))}
       </nav>
     </div>
   );
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
+const MenuItem: React.FC<MenuItemProps & { onSectionClick?: (sectionKey: string) => void }> = ({ 
+  link, 
+  text, 
+  image, 
+  onSectionClick 
+}) => {
   const itemRef = React.useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
   const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
@@ -81,6 +104,14 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
     );
   };
 
+  const handleClick = (ev: React.MouseEvent<HTMLAnchorElement>) => {
+    ev.preventDefault();
+    if (onSectionClick) {
+      const sectionKey = link.replace('#', '');
+      onSectionClick(sectionKey);
+    }
+  };
+
   const repeatedMarqueeContent = React.useMemo(() => {
     return Array.from({ length: 4 }).map((_, idx) => (
       <React.Fragment key={idx}>
@@ -100,6 +131,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         {text}
       </a>

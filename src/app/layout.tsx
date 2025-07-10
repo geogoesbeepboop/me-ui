@@ -1,12 +1,14 @@
+'use client'
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import { ReactNode } from "react";
 import Navigation from "../components/Navigation";
+import Link from "next/link";
 
-export const metadata = {
-  title: "George Andrade-Munoz",
-  description: "An introduction.",
-};
+// export const metadata = {
+//   title: "George Andrade-Munoz",
+//   description: "An introduction.",
+// };
 
 export default function RootLayout({
   children,
@@ -31,8 +33,15 @@ export default function RootLayout({
             color: "var(--color-text-primary)",
             fontFamily: "var(--font-habibi-regular)",
             padding: "var(--space-xlarge) var(--gutter)",
+            position: "relative",
           }}
         >
+          <Link href="/" className={"myName"}>
+            <div
+            >
+              George Andrade-Munoz
+            </div>
+          </Link>
           <Navigation />
           {children}
         </div>

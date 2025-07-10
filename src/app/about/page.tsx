@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import BlurText from '@/components/BlurText';
 import Aurora from '@/backgrounds/Aurora';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 
 const sections = [
@@ -49,15 +50,77 @@ const sections = [
 ];
 
 export default function About() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [activeSection, setActiveSection] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Show back to top when user is near the bottom
+      if (scrollY + windowHeight > documentHeight - 200) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+
+      // Update active section based on scroll position
+      const sectionElements = sections.map(section => 
+        document.getElementById(section.key)
+      );
+      
+      sectionElements.forEach((element, index) => {
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
+            setActiveSection(index);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionIndex: number) => {
+    const sectionKey = sections[sectionIndex].key;
+    const element = document.getElementById(sectionKey);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionIndex);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <main className={styles.storybookMain}>
       <div className={styles.auroraContainer}>
         <Aurora />
       </div>
+      
+      {/* Section Navigation Dots */}
+      <div className={styles.sectionDots}>
+        {sections.map((section, index) => (
+          <button
+            key={section.key}
+            className={`${styles.dot} ${activeSection === index ? styles.activeDot : ''}`}
+            onClick={() => scrollToSection(index)}
+            aria-label={`Go to ${section.title}`}
+          />
+        ))}
+      </div>
+      
       <div className={styles.storybookContent}>
         {sections.map((section, idx) => (
           <motion.section
             key={section.key}
+            id={section.key}
             className={`${styles.storySection} ${styles[`layout${section.layout.charAt(0).toUpperCase() + section.layout.slice(1)}`]}`}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,6 +144,19 @@ export default function About() {
           </motion.section>
         ))}
       </div>
+      
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <motion.button
+          className={styles.backToTop}
+          onClick={scrollToTop}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+        >
+          Back to Top
+        </motion.button>
+      )}
     </main>
   );
 } 
