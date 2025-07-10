@@ -1,0 +1,91 @@
+.storybookMain {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background: transparent;
+  z-index: 0;
+}
+
+.storybookContent {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem 1.5rem;
+  z-index: 1;
+}
+
+.storySection {
+  background: var(--color-bg-secondary, #1a1a1a);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  padding: 3rem 2rem 2.5rem 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.storySection:hover {
+  box-shadow: 0 6px 24px rgba(42,0,209,0.18);
+}
+
+.sectionImageWrap {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a00d1 0%, #7cff67 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.sectionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(0.1) contrast(1.1);
+}
+
+.sectionHeader {
+  font-family: var(--font-habibi-regular, serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.sectionText {
+  color: var(--color-text-secondary, #a0a0a0);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .storybookContent {
+    padding: 2rem 0.5rem 3rem 0.5rem;
+  }
+  .storySection {
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  .sectionHeader {
+    font-size: 1.25rem;
+  }
+  .sectionImageWrap {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.25rem;
+  }
+} 
