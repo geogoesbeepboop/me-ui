@@ -1,5 +1,5 @@
 "use client"
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import BlurText from '@/components/BlurText';
 import Aurora from '@/backgrounds/Aurora';
 import Image from 'next/image';
@@ -116,6 +116,7 @@ export default function About() {
         ))}
       </div>
       
+      {/* Animated Section Content */}
       <div className={styles.storybookContent}>
         {sections.map((section, idx) => (
           <motion.section
@@ -123,9 +124,8 @@ export default function About() {
             id={section.key}
             className={`${styles.storySection} ${styles[`layout${section.layout.charAt(0).toUpperCase() + section.layout.slice(1)}`]}`}
             initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.7, delay: idx * 0.1 }}
+            animate={activeSection === idx ? { opacity: 1, y: 0 } : { opacity: 0.5, y: 30 }}
+            transition={{ duration: 0.7, delay: 0 }}
           >
             <div className={styles.sectionImageWrap}>
               <Image

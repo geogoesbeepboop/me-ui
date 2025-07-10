@@ -1,7 +1,7 @@
 'use client'
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import Link from "next/link";
 
@@ -15,6 +15,14 @@ export default function RootLayout({
 }: {
   children: ReactNode;
 }) {
+  const [showMyName, setShowMyName] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowMyName(window.scrollY < 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <html lang="en">
       <head>
@@ -36,9 +44,8 @@ export default function RootLayout({
             position: "relative",
           }}
         >
-          <Link href="/" className={"myName"}>
-            <div
-            >
+          <Link href="/" className={"myName"} style={{ opacity: showMyName ? 1 : 0, pointerEvents: showMyName ? 'auto' : 'none', transition: 'opacity 0.3s' }}>
+            <div>
               George Andrade-Munoz
             </div>
           </Link>
