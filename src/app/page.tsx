@@ -21,7 +21,7 @@ export default function Home() {
           <span>I'm a</span>
           <div className="rotating-text-wrapper">
             <RotatingText
-              texts={['Fullstack Engineer', 'Cloud Practitioner', 'AI Developer', 'Jazz Enthusiast']}
+              texts={['Fullstack Engineer', 'Cloud Practitioner', 'AI Enthusiast', 'Jazz Lover', 'Passionate Foodie']}
               staggerFrom={"first"}
               initial={{ y: "60%" }}
               animate={{ y: 0 }}

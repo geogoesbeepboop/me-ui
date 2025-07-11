@@ -22,7 +22,7 @@ const sections = [
     key: 'drives',
     title: 'What Drives Me',
     text: ` 
-    I believe great software is equal parts thoughtful design, beautiful code, and genuine empathy for the end user. 
+    I believe great software is equal parts empathic design, robust system architecture, and beautiful code. 
     My love for building apps stems from my problem-solving and ever-learning nature. 
     In the end, I aim to build solutions that make life a little bit easier.`,
     image: '/globe.svg',
