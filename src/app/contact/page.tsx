@@ -1,9 +1,38 @@
 "use client";
 import styles from "./page.module.css";
 import { useState } from "react";
+import { useRef } from "react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupText, setPopupText] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Quirky lines for the popup
+  const quirkyLines = [
+    // "✨ Message sent into the void! ✨",
+    // "🚀 Your words are on their way!",
+    "📬 Sent! Carrier pigeon dispatched.",
+    "🤖 Beep boop! Message sent!"
+  ];
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true);
+    // Reset form fields
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+    // Show quirky popup
+    const randomLine = quirkyLines[Math.floor(Math.random() * quirkyLines.length)];
+    setPopupText(randomLine);
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+      setSubmitted(false);
+    }, 4000);
+  };
 
   return (
     <main className={styles.contactMain}>
@@ -23,10 +52,8 @@ export default function Contact() {
         </div>
         <form
           className={styles.contactForm}
-          onSubmit={e => {
-            e.preventDefault();
-            setSubmitted(true);
-          }}
+          ref={formRef}
+          onSubmit={handleSubmit}
         >
           <div className={styles.formField}>
             <label htmlFor="name">
@@ -47,9 +74,14 @@ export default function Contact() {
             <textarea id="message" name="message" required minLength={10} />
           </div>
           <button className={styles.submitButton} type="submit">
-            {submitted ? "Sent!" : "Send Message"}
+            Send Message
           </button>
         </form>
+        {showPopup && (
+          <div className={styles.popup}>
+            {popupText}
+          </div>
+        )}
       </section>
     </main>
   );

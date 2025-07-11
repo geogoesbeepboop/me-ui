@@ -23,27 +23,29 @@ interface ProfileCardProps {
 const DEFAULT_BEHIND_GRADIENT = `
   radial-gradient(
     farthest-side circle at var(--pointer-x) var(--pointer-y),
-    hsla(254, 60%, 50%, var(--card-opacity)) 4%,
-    hsla(254, 40%, 40%, calc(var(--card-opacity)*0.75)) 15%,
-    hsla(254, 25%, 30%, calc(var(--card-opacity)*0.5)) 50%,
-    hsla(254, 10%, 20%, 0) 100%
+    rgba(61, 22, 216, var(--card-opacity)) 40%,
+    rgba(61, 22, 216, calc(var(--card-opacity)*0.5)) 15%,
+    rgba(61, 22, 216, calc(var(--card-opacity)*0.5)) 50%,
+    rgba(61, 22, 216, .7) 100%
   ),
-  radial-gradient(35% 52% at 55% 20%, rgba(0, 255, 224, 0.3) 0%, transparent 100%),
-  radial-gradient(100% 100% at 50% 50%, rgba(0, 193, 255, 0.2) 1%, transparent 76%),
+  radial-gradient(35% 52% at 55% 20%, 
+  rgba(61, 22, 216, 0.7) 0%, transparent 100%),
+  radial-gradient(100% 100% at 50% 50%,
+  rgba(39, 9, 156, 0.2) 1%, transparent 76%),
   conic-gradient(
     from 124deg at 50% 50%,
-    rgba(193, 55, 255, 0.1) 0%,
-    rgba(7, 198, 255, 0.1) 40%,
-    rgba(7, 198, 255, 0.1) 60%,
-    rgba(193, 55, 255, 0.1) 100%
+    rgba(61, 22, 216) 0%,
+    rgba(61, 22, 216, 0.1) 40%,
+    rgba(61, 22, 216, 0.1) 60%,
+    rgba(240, 21, 65, 0.1) 100%
   );
 `;
 
 const DEFAULT_INNER_GRADIENT =
   `linear-gradient(
     145deg,
-    rgba(67, 28, 82, 0.6) 0%,
-    rgba(0, 193, 255, 0.2) 100%
+    rgba(61, 22, 216, 0.5) 30%,
+    rgba(240, 21, 65, 0.5) 70%
   )`;
 
 
