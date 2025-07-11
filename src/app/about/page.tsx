@@ -9,10 +9,11 @@ import styles from './page.module.css';
 const sections = [
   {
     key: 'about',
-    title: 'A little bit about me',
-    text: `I’m a full-stack developer with a soft spot for elegant solutions. 
-    My love for building apps stems from my problem-solving and ever-learning nature. 
-    In the end, I aim to build solutions that make everyone's lives a little bit easier.`,
+    title: 'About Me',
+    text: `I’m a full-stack developer with a passion for elegant solutions. 
+    I’m fueled by a mix of curiosity, creativity, and caffeine (let’s be honest).
+    I'm driven to keep creating and innovating. After all, we’re living in a time where almost anything is possible from a laptop- how cool is that?
+    `,
     image: '/me.png',
     imageAlt: 'Profile placeholder',
     layout: 'left'
@@ -20,30 +21,31 @@ const sections = [
   {
     key: 'drives',
     title: 'What Drives Me',
-    text: `I’m fueled by a mix of curiosity, creativity, and caffeine (let’s be honest). 
+    text: ` 
     I believe great software is equal parts thoughtful design, beautiful code, and genuine empathy for the end user. 
-    I strive to keep creating and innovating. After all, we’re living in a time where almost anything is possible from a laptop- how cool is that?`,
+    My love for building apps stems from my problem-solving and ever-learning nature. 
+    In the end, I aim to build solutions that make life a little bit easier.`,
     image: '/globe.svg',
     imageAlt: 'Drives placeholder',
     layout: 'right'
   },
   {
     key: 'learning',
-    title: 'What I\'m Learning Right Now',
+    title: 'Current Studies',
     text: `I’m diving into cloud infrastructure and networking to 
     broaden my knowledge of the behind-the-scenes engineering that keeps our world spinning. I’m also integrating
     AI into apps that make the user experience feel more like magic than software.`,
-    image: '/window.svg',
+    image: '/cloud_ai.jpg',
     imageAlt: 'Learning placeholder',
     layout: 'left'
   },
   {
     key: 'afk',
-    title: "When I'm AFK...",
-    text: `When I’m not knee-deep in code, I’m probably modeling my dream cars, 
+    title: "During My Free Time...",
+    text: `When I’m not knee-deep in code, I’m probably tinkering with my 3D printer, 
     testing out salsa recipes, 
     or playing my saxophone. I’m a believer that creative hobbies make better engineers- and vice versa.`,
-    image: '/file.svg',
+    image: '/ai_gum_gum_fruit.png',
     imageAlt: 'AFK placeholder',
     layout: 'right'
   }
