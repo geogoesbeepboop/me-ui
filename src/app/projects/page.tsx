@@ -8,19 +8,19 @@ const projects: Project[] = [
   {
     id: "1",
     title: "Cali",
-    description: "A clean, dark-themed blog platform focused on typography and reading experience.",
+    description: "A powerful AI chatbot integrated with real-time financial data, function tools, and web search to give you insightful economic analysis on demand.",
     image: "/window.svg",
-    techStack: ["Next.js", "TypeScript", "Vercel"],
-    link: "#",
-    status: "production"
+    techStack: ["Next.js", "Zustand", "Nest.js", "Redis", "PostgreSQL", "DynamoDB"],
+    // link: "#",
+    status: "development"
   },
   {
     id: "2",
-    title: "Portfolio Gallery",
-    description: "A portfolio site with atmospheric imagery and subtle interactions.",
+    title: "Ruby",
+    description: "Your personal AI companion for daily reflection, goal setting, and mindful progress— built to listen, guide, and grow with you.",
     image: "/me.png",
-    techStack: ["React", "Framer Motion", "CSS Modules"],
-    link: "#",
+    techStack: ["SwiftUI", "Combine", "Core Data"],
+    // link: "#",
     status: "design"
   }
 ];
@@ -28,22 +28,22 @@ const projects: Project[] = [
 const statusMap = {
   design: {
     label: "Design",
-    color: "#2a00d1",
+    color: "#ee07ff",
     icon: <FaPencilRuler />
   },
   development: {
     label: "Development",
-    color: "#00bcd4",
+    color: "#ff3907",
     icon: <FaCode />
   },
   beta: {
     label: "Beta",
-    color: "#ffc107",
+    color: "#00bcd4",
     icon: <FaFlask />
   },
   production: {
     label: "Production",
-    color: "#4caf50",
+    color: "#3eba18",
     icon: <FaRocket />
   },
   archived: {

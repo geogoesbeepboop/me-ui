@@ -10,7 +10,9 @@ const sections = [
   {
     key: 'about',
     title: 'A little bit about me',
-    text: `I'm George Andrade-Munoz, a designer and developer based in Minimal City. I specialize in building beautiful, accessible, and performant web apps. My work is guided by a love for whitespace, elegant typography, and subtle interactions.`,
+    text: `I’m a full-stack developer with a soft spot for elegant solutions. 
+    My love for building apps stems from my problem-solving and ever-learning nature. 
+    In the end, I aim to build solutions that make everyone's lives a little bit easier.`,
     image: '/me.png',
     imageAlt: 'Profile placeholder',
     layout: 'left'
@@ -18,35 +20,33 @@ const sections = [
   {
     key: 'drives',
     title: 'What Drives Me',
-    text: `Curiosity, creativity, and a desire to make technology more human. I thrive on solving complex problems and building things that matter.`,
+    text: `I’m fueled by a mix of curiosity, creativity, and caffeine (let’s be honest). 
+    I believe great software is equal parts thoughtful design, beautiful code, and genuine empathy for the end user. 
+    I strive to keep creating and innovating. After all, we’re living in a time where almost anything is possible from a laptop- how cool is that?`,
     image: '/globe.svg',
     imageAlt: 'Drives placeholder',
-    layout: 'right' 
+    layout: 'right'
   },
   {
     key: 'learning',
-    title: 'Things I\'m learning about right now',
-    text: `AI, generative art, and the intersection of design and engineering. I'm always exploring new tools and frameworks to expand my toolkit.`,
+    title: 'What I\'m Learning Right Now',
+    text: `I’m diving into cloud infrastructure and networking to 
+    broaden my knowledge of the behind-the-scenes engineering that keeps our world spinning. I’m also integrating
+    AI into apps that make the user experience feel more like magic than software.`,
     image: '/window.svg',
     imageAlt: 'Learning placeholder',
-    layout: 'left' 
+    layout: 'left'
   },
   {
     key: 'afk',
-    title: 'Current Interests making me AFK',
-    text: `Jazz piano, hiking, and discovering new coffee shops. I believe inspiration often strikes away from the screen.`,
+    title: "When I'm AFK...",
+    text: `When I’m not knee-deep in code, I’m probably modeling my dream cars, 
+    testing out salsa recipes, 
+    or playing my saxophone. I’m a believer that creative hobbies make better engineers- and vice versa.`,
     image: '/file.svg',
     imageAlt: 'AFK placeholder',
-    layout: 'right' 
-  },
-  {
-    key: 'cta',
-    title: 'Call to Action',
-    text: `Let's connect! Whether you want to collaborate, chat about tech, or share a coffee recommendation, my inbox is open.`,
-    image: '/github.png',
-    imageAlt: 'Call to action placeholder',
-    layout: 'center'
-  },
+    layout: 'right'
+  }
 ];
 
 export default function About() {
@@ -58,7 +58,7 @@ export default function About() {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      
+
       // Show back to top when user is near the bottom
       if (scrollY + windowHeight > documentHeight - 200) {
         setShowBackToTop(true);
@@ -67,10 +67,10 @@ export default function About() {
       }
 
       // Update active section based on scroll position
-      const sectionElements = sections.map(section => 
+      const sectionElements = sections.map(section =>
         document.getElementById(section.key)
       );
-      
+
       sectionElements.forEach((element, index) => {
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -103,7 +103,7 @@ export default function About() {
       {/* <div className={styles.auroraContainer}>
         <Aurora />
       </div> */}
-      
+
       {/* Section Navigation Dots */}
       <div className={styles.sectionDots}>
         {sections.map((section, index) => (
@@ -121,7 +121,7 @@ export default function About() {
           />
         ))}
       </div>
-      
+
       {/* Animated Section Content */}
       <div className={styles.storybookContent}>
         {sections.map((section, idx) => (
@@ -150,7 +150,7 @@ export default function About() {
           </motion.section>
         ))}
       </div>
-      
+
       {/* Back to Top Button */}
       {showBackToTop && (
         <motion.button
