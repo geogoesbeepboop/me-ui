@@ -16,12 +16,12 @@ const projects: Project[] = [
   },
   {
     id: "2",
-    title: "Ruby",
+    title: "Lotus",
     description: "Your personal AI companion for daily reflection, goal setting, and mindful progress— built to listen, guide, and grow with you.",
-    image: "/me.png",
-    techStack: ["SwiftUI", "Combine", "Core Data"],
+    image: "/lotus-web.png",
+    techStack: ["SwiftUI", "Combine", "SwiftData", "FoundationModels"],
     // link: "#",
-    status: "design"
+    status: "development"
   }
 ];
 

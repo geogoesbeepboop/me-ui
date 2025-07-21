@@ -14,7 +14,7 @@ const sections = [
     I’m fueled by a mix of curiosity, creativity, and caffeine (let’s be honest).
     I'm driven to keep creating and innovating. After all, we’re living in a time where almost anything is possible from a laptop- how cool is that?
     `,
-    image: '/me.png',
+    image: '/happy.jpeg',
     imageAlt: 'Profile placeholder',
     layout: 'left'
   },
@@ -25,7 +25,7 @@ const sections = [
     I believe great software is equal parts empathic design, robust system architecture, and beautiful code. 
     My love for building apps stems from my problem-solving and ever-learning nature. 
     In the end, I aim to build solutions that make life a little bit easier.`,
-    image: '/globe.svg',
+    image: '/tt.jpeg',
     imageAlt: 'Drives placeholder',
     layout: 'right'
   },
